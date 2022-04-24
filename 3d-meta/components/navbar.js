@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import Logo from './logo'
+import Logo from './Logo'
 import {
     Container,
     Box,

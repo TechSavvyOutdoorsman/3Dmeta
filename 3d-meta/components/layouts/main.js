@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Box } from '@chakra-ui/react'
+import { Box, Container } from '@chakra-ui/react'
 import Navbar from '../Navbar'
 
 
@@ -12,9 +12,9 @@ const Main = ({ children, router }) => {
                 <link rel='shortcut icon' href='/orb.svg' />
             </Head>
                 <Navbar path={router.asPath} /> 
-                <Box>
+                <Container>
                     {children}
-                </Box>
+                </Container>
         </Box>
     )
 }

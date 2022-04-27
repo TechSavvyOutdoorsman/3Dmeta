@@ -46,7 +46,7 @@ const Navbar = props => {
         style={{ 
             backdropFilter: 'blur(10px)', 
             WebkitBackdropFilter: 'blur(10px)',
-            '&(max-width: 599px)': {
+            '&(maxWidth: 599px)': {
                 height: '50%',
             }
         }}

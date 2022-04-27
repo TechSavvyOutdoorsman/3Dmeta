@@ -50,7 +50,7 @@ const Navbar = props => {
                 height: '50%',
             }
         }}
-        zIndex={1}
+        zIndex={5}
         {...props}
         >
             <Container

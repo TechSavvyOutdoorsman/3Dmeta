@@ -42,8 +42,14 @@ const Navbar = props => {
         position='fixed'
         as='nav'
         w='100%'
-        bg='none'
-        // style={{ backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)'}}
+        bg='mBlack.900'
+        style={{ 
+            backdropFilter: 'blur(10px)', 
+            WebkitBackdropFilter: 'blur(10px)',
+            '&(max-width: 599px)': {
+                height: '50%',
+            }
+        }}
         zIndex={1}
         {...props}
         >
@@ -54,25 +60,26 @@ const Navbar = props => {
                 display='flex'
             >
                 <Flex
-                align='center'
-                mr={6}
+                    align='center'
+                    mr={6}
                 >
                     <Heading 
-                    as='h1'
-                    size='lg'
-                    letterSpacing={'tighter'}>
+                        as='h1'
+                        size='lg'
+                        letterSpacing={'tighter'}
+                    >
                         <Logo /> 
                     </Heading>
                 </Flex>
 
                 <Stack
-                direction={{ base: 'column', md: 'row'}}
-                display={{base: 'none', md: 'flex'}}
-                justify='flex-end'
-                width='100%'
-                alignItems='center'
-                flexGrow={1}
-                mt={{ base: 4, nmd: 0}}
+                    direction={{ base: 'column', md: 'row'}}
+                    display={{base: 'none', md: 'flex'}}
+                    justify='flex-end'
+                    width='100%'
+                    alignItems='center'
+                    flexGrow={1}
+                    mt={{ base: 4, nmd: 0}}
                 >
                     <LinkItem href='/works' path={path}>
                         Works
@@ -82,33 +89,33 @@ const Navbar = props => {
                     </LinkItem>
                 </Stack>
 
-            <Box flex={1} align='right'>
+                <Box flex={1} align='right'>
 
-                <Box ml={2} display={{ base: 'inline-block', md: 'none'}}>
-                    <Menu>
-                        <MenuButton
-                        as={IconButton} 
-                        icon={<HamburgerIcon />}
-                        variant='outline'
-                        aria-label='Options'
-                        />
+                    <Box ml={2} display={{ base: 'inline-block', md: 'none'}}>
+                        <Menu>
+                            <MenuButton
+                                as={IconButton} 
+                                icon={<HamburgerIcon />}
+                                variant='outline'
+                                aria-label='Options'
+                            />
 
-                    <MenuList bg='mBlack.800' color='mWhite.100'>
-                        <NextLink href='/' passHref>
-                            <MenuItem as={Link}>Portfolio</MenuItem>
-                        </NextLink>
-                        <NextLink href='/works' passHref>
-                            <MenuItem as={Link}>About</MenuItem>
-                        </NextLink>
-                        <NextLink href='/posts' passHref>
-                            <MenuItem as={Link}>Start a Project</MenuItem>
-                        </NextLink>
-                        {/* <MenuItem as={Link} href='https://www.github.com/techsavvyoutdoorsman/brams-website'>View Source Code</MenuItem> */}
-                        
-                    </MenuList>
-                    </Menu>
+                        <MenuList bg='mBlack.800' color='mWhite.100'>
+                            <NextLink href='/' passHref>
+                                <MenuItem as={Link}>Portfolio</MenuItem>
+                            </NextLink>
+                            <NextLink href='/works' passHref>
+                                <MenuItem as={Link}>About</MenuItem>
+                            </NextLink>
+                            <NextLink href='/posts' passHref>
+                                <MenuItem as={Link}>Start a Project</MenuItem>
+                            </NextLink>
+                            {/* <MenuItem as={Link} href='https://www.github.com/techsavvyoutdoorsman/brams-website'>View Source Code</MenuItem> */}
+                            
+                        </MenuList>
+                        </Menu>
+                    </Box>
                 </Box>
-            </Box>
             </Container>
         </Box>
     )

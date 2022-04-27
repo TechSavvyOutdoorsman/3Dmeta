@@ -1,5 +1,4 @@
 import { useRef, useState, useEffect, Suspense, useCallback } from 'react'
-import { SpaceSpinner, SpaceContainer } from './Space-Loader'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import Planet from './Planet'
 import Saturn from './Saturn'

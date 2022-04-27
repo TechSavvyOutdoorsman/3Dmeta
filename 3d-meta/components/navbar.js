@@ -101,13 +101,13 @@ const Navbar = props => {
                             />
 
                         <MenuList bg='mBlack.800' color='mWhite.100'>
-                            <NextLink href='/' passHref>
+                            <NextLink href='/'>
                                 <MenuItem as={Link}>Portfolio</MenuItem>
                             </NextLink>
-                            <NextLink href='/works' passHref>
+                            <NextLink href='/works'>
                                 <MenuItem as={Link}>About</MenuItem>
                             </NextLink>
-                            <NextLink href='/posts' passHref>
+                            <NextLink href='/posts'>
                                 <MenuItem as={Link}>Start a Project</MenuItem>
                             </NextLink>
                             {/* <MenuItem as={Link} href='https://www.github.com/techsavvyoutdoorsman/brams-website'>View Source Code</MenuItem> */}

@@ -3,7 +3,7 @@ import { Box, Container } from '@chakra-ui/react'
 import Navbar from '../Navbar'
 
 
-const Main = ({ children, router }) => {
+const Layout = ({ children, router }) => {
     return (
         <Box as='main'>
             <Head>
@@ -12,12 +12,14 @@ const Main = ({ children, router }) => {
                 <link rel='shortcut icon' href='/orb.svg' />
             </Head>
                 <Navbar path={router.asPath} /> 
-                <Container>
+                <Container
+                    p={0}
+                    m={0}
+                >
                     {children}
                 </Container>
         </Box>
     )
 }
 
-
-export default Main
+export default Layout

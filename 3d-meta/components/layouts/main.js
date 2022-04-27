@@ -3,7 +3,7 @@ import { Box, Container } from '@chakra-ui/react'
 import Navbar from '../Navbar'
 
 
-const Main = ({ children, router }) => {
+const Layout = ({ children, router }) => {
     return (
         <>
             <Head>
@@ -26,4 +26,4 @@ const Main = ({ children, router }) => {
     )
 }
 
-export default Main
+export default Layout

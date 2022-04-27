@@ -57,7 +57,6 @@ const Navbar = props => {
                 display='flex'
                 padding={{ base: '.25rem', md: '0' }}
                 maxW='container.xl'
-                display='flex'
             >
                 <Flex
                     align='center'
@@ -101,13 +100,13 @@ const Navbar = props => {
                             />
 
                         <MenuList bg='mBlack.800' color='mWhite.100'>
-                            <NextLink href='/'>
+                            <NextLink href='/' passHref>
                                 <MenuItem as={Link}>Portfolio</MenuItem>
                             </NextLink>
-                            <NextLink href='/works'>
+                            <NextLink href='/works' passHref>
                                 <MenuItem as={Link}>About</MenuItem>
                             </NextLink>
-                            <NextLink href='/posts'>
+                            <NextLink href='/posts' passHref>
                                 <MenuItem as={Link}>Start a Project</MenuItem>
                             </NextLink>
                             {/* <MenuItem as={Link} href='https://www.github.com/techsavvyoutdoorsman/brams-website'>View Source Code</MenuItem> */}

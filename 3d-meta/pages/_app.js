@@ -1,5 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react'
-import Main from '../components/layouts/main'
+import Layout from '../components/layouts/Main'
 import Fonts from '../lib/fonts'
 import theme from '../lib/theme'
 
@@ -8,9 +8,9 @@ function MyApp({ Component, pageProps, router  }) {
   return ( 
     <ChakraProvider theme={theme}>
     <Fonts />
-      <Main router={router}>
+      <Layout router={router}>
         <Component {...pageProps} />
-      </Main>
+      </Layout>
     </ChakraProvider>
   )
 }

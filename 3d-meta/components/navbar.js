@@ -21,7 +21,7 @@ const LinkItem = ({ href, path, children }) => {
     const inactiveColor = 'mWhite.200'
     const active = path === href
     return (
-        <NextLink href={href} passHref>
+        <NextLink href={href}>
             <Link
                 p={2}
                 color={active ? 'meta.500' : inactiveColor}

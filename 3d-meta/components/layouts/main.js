@@ -1,25 +1,22 @@
 import Head from 'next/head'
-import { Box, Container } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import Navbar from '../Navbar'
 
 
-function Main ({ children, router }) {
+function Layout({ children, router }) {
     return (
-        <Box as='main'>
+        <Box p={0} m={0}>
             <Head>
                 <meta name='viewport' content='width=device-width, initial-scale=1' />
                 <title>METATECH Digital - Homepage</title>
                 <link rel='shortcut icon' href='/orb.svg' />
             </Head>
                 <Navbar path={router.asPath} /> 
-                <Container
-                    p={0}
-                    m={0}
-                >
+                <main>
                     {children}
-                </Container>
+                </main>
         </Box>
     )
 }
 
-export default Main 
+export default Layout

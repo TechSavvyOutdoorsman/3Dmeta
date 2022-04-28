@@ -1,6 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import Layout from '../components/Layout'
-import Fonts from '../lib/fonts'
+import Fonts from '../components/fonts'
 import theme from '../lib/theme'
 
 

@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import { Box } from '@chakra-ui/react'
-import Navbar from './Navbar'
+import Navbar from './navbar'
 
 
-function Layout({ children, router }) {
+const Layout = ({ children, router }) => {
     return (
-        <main>
+        <Box as='main'>
             <Head>
                 <meta name='viewport' content='width=device-width, initial-scale=1' />
                 <title>METATECH Digital - Homepage</title>
@@ -15,7 +15,7 @@ function Layout({ children, router }) {
             <Box p={0} m={0}>
                 {children}
             </Box>
-        </main>
+        </Box>
     )
 }
 

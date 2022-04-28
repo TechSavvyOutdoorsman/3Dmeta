@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps, router  }) {
     <ChakraProvider theme={theme}>
       <Fonts />
       <Layout router={router}>
-        <Component {...pageProps} />
+        <Component {...pageProps} key={router.route} />
       </Layout>
     </ChakraProvider>
   )

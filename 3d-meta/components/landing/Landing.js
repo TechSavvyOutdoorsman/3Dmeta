@@ -12,7 +12,7 @@ const Landing = () => {
 
     return (
         <Flex
-            h='100vh'
+            h={{ base: '90vh', md: '100vh'}}
             flexDir='column'
             align='center'
             justify='center'

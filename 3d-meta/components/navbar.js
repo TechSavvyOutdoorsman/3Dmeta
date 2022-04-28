@@ -32,7 +32,7 @@ const LinkItem = ({ href, path, children }) => {
     )
 }
 
-const Navbar = props => {
+const Navbar = (props) => {
     const { path } = props 
 
     return (

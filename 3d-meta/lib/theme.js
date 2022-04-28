@@ -16,10 +16,8 @@ const components = {
         }
     },
     Link: {
-        baseStyle: () => ({
-            color: '#496DDB',
-            textUnderlineOffest: 3 
-        })
+        color: '#496DDB',
+        textUnderlineOffest: 3 
     }
 }
 

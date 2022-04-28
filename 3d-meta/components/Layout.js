@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 
 
 function Layout({ children, router }) {
@@ -10,7 +10,7 @@ function Layout({ children, router }) {
                 <title>METATECH Digital - Homepage</title>
                 <link rel='shortcut icon' href='/orb.svg' />
             </Head>
-            <Navbar path={router.asPath} /> 
+            {/* <Navbar path={router.asPath} />  */}
             <main>
                 {children}
             </main>

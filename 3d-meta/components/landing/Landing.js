@@ -1,30 +1,25 @@
-import { useRef, useContext } from 'react'
-import { useFrame, useThree } from '@react-three/fiber'
-import { a, useSpring } from '@react-spring/three'
+import { useRef } from 'react'
+import { useSpring } from '@react-spring/three'
 import {
     Flex,
     Button,
     Box,
-    Container,
     Heading, 
-    Text, 
-    
 } from '@chakra-ui/react'
-
 import NoSsr from '../No-Ssr'
 import Space from './Space'
 
 const Landing = () => {
 
-    const { opacity } = useSpring({
-        to: {
-            opacity: 1
-        },
-        from: {
-            opacity: 0
-        },
-        delay: 1000
-    })
+    // const { opacity } = useSpring({
+    //     to: {
+    //         opacity: 1
+    //     },
+    //     from: {
+    //         opacity: 0
+    //     },
+    //     delay: 1000
+    // })
 
 
     return (

@@ -1,25 +1,17 @@
-import { useRef, useState, useEffect, Suspense, useCallback } from 'react'
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { useRef, useState, Suspense,  } from 'react'
+import { Canvas, } from '@react-three/fiber'
 import Planet from './Planet'
 import Saturn from './Saturn'
 import FlyingAsteroid from './FlyingAsteroid'
-import { gsap } from 'gsap'
-import { Stars, PerspectiveCamera, Loader, useGLTF, Environment, Float, SpotLight } from '@react-three/drei'
+import { Stars, PerspectiveCamera, Loader, useGLTF, Environment, Float, } from '@react-three/drei'
 import { useSpring, animated, easings } from '@react-spring/three'
 import { Flex, Box as FlexBox, } from '@react-three/flex'
-import { Flex as FlexChakra, Heading } from '@chakra-ui/react'
-import * as THREE from 'three'
+import { Heading } from '@chakra-ui/react'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 
-    const AstronautModel = ({ ref }) => {
-        const gltf = useGLTF('/threeD/astronaut.glb', true)
-        return <primitive ref={ref} object={gltf.scene} dispose={null} />
-    }
-
     const Astronaut = () => {
         const mesh = useRef()
-        const [active, setActive] = useState(false)
         const { nodes, materials } = useGLTF('/threeD/astronaut.glb')
         useGLTF.preload(GLTFLoader, '/threeD/astronaut.glb')
 
@@ -96,7 +88,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
         )
     }
 
-    const Space = (props) => {
+    const Space = () => {
 
         return (
             <>

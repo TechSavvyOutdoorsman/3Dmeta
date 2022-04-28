@@ -1,7 +1,7 @@
 import { extendTheme } from '@chakra-ui/react'
 
 const styles = {
-    global: props => ({
+    global: () => ({
         body: {
             bg: '#080705'
         }

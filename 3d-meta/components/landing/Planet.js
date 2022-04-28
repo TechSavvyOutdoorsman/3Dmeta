@@ -1,7 +1,5 @@
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import { useGLTF, Float } from "@react-three/drei"
-import { useFrame } from '@react-three/fiber'
-import Media from 'react-media'
 
 const Planet = (props) => {
     const group = useRef()

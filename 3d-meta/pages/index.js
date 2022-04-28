@@ -1,6 +1,5 @@
 import { 
   Flex,
-  Heading
 } from '@chakra-ui/react'
 import Landing from '../components/landing/Landing'
 import LandingTwo from '../components/landing2/Landing'

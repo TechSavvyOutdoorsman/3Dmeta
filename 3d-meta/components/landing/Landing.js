@@ -16,6 +16,7 @@ const Landing = () => {
             flexDir='column'
             align='center'
             justify='center'
+            bg='mBlack.900'
         >
             <Flex m='auto' p={4} position='absolute' zIndex={1} gap={2} flexDir='column' textAlign='center'>
                 <Heading lineHeight='32px' as='h1' color='mWhite.100' fontSize='xx-large'>We Create Unparalled Digital Experiences</Heading>

@@ -14,9 +14,10 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
         const { nodes, materials } = useGLTF('/threeD/astronaut.glb')
         useGLTF.preload(GLTFLoader, '/threeD/astronaut.glb')
 
-        const { position } = useSpring({
+        const { position, rotation } = useSpring({
             to: {
-                position: [0.6, -0.1, 4.7],
+                position: [0.6, 0.1, 4.8],
+                rotation: [-0.2, 0, 0]
             }, 
             from: {
                 position: [0.6, -6, 0]
@@ -32,7 +33,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
         return (
                     // <AstronautModel id='astro' ref={mesh} />
-                            <animated.group position={position} ref={mesh} dispose={null} >
+                            <animated.group position={position} rotation={rotation} ref={mesh} dispose={null} >
                                     <group
                                         position={[-1.103, 0, -0.753]}
                                         rotation={[-Math.PI / 2, 0, 0]}
@@ -95,7 +96,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
             <Suspense fallback={null}>
                     <Stars />
-                    <ambientLight intensity={1} />
+                    <ambientLight intensity={1} color='#FFFFFF'  />
                     <Flex justifyContent='center' flexDirection='row' alignItems='center' >
                         <FlexBox  width='auto' height='auto' flexGrow={1} centerAnchor>
                             <Float

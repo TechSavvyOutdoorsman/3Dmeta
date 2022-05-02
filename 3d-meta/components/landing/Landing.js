@@ -15,7 +15,7 @@ const Landing = () => {
             h={{ base: '90vh', md: '100vh'}}
             flexDir='column'
             align='center'
-            justify='space-between'
+            justify={{ base: 'space-between', md: 'center' }}
             bg='mBlack.900'
             >
             <Flex  pt={{ base: '8rem', md: '0' }} paddingX={4} position='absolute' zIndex={1} gap={2} flexDir='column' textAlign='center'>

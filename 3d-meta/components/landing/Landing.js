@@ -7,15 +7,14 @@ import {
 import { gsap } from 'gsap'
 import NoSsr from '../No-Ssr'
 import Space from './Space'
-import { useSpring, animated, easings, useSpringRef } from '@react-spring/three'
 
 const Landing = () => {
     
-    const tl1 = useRef()
+    // const tl1 = useRef()
     const heading1 = useRef()
     const heading2 = useRef()
     const heading3 = useRef()
-
+    
     useEffect(() => {
         let tl1 = new gsap.timeline()
 

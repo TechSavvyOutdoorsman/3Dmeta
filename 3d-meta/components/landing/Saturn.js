@@ -73,7 +73,7 @@ const Saturn = (props) => {
   );
 }
 
-useGLTF.preload("/threeD/saturn.glb");
+// useGLTF.preload("/threeD/saturn.glb");
 
 export default Saturn
 

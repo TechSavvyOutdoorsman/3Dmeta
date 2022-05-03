@@ -34,6 +34,6 @@ const Planet = (props) => {
     )
 }
 
-useGLTF.preload('/threeD/red-rock.glb')
+// useGLTF.preload('/threeD/red-rock.glb')
 
 export default Planet

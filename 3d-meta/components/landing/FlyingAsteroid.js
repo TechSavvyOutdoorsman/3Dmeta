@@ -50,4 +50,4 @@ export default function FlyingAsteroid({ ...props }) {
   )
 }
 
-useGLTF.preload('/threeD/flying-asteroid.glb')
+// useGLTF.preload('/threeD/flying-asteroid.glb')

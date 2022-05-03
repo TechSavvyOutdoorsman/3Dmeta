@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import styled from '@emotion/styled'
-import logo from '../public/orb+sideTXT.png'
+
 
 const LogoBox = styled.span`
     display: inline-flex;

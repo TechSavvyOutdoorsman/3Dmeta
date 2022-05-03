@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import styled from '@emotion/styled'
-
+import logo from '../public/orb+sideTXT.png'
 
 const LogoBox = styled.span`
     display: inline-flex;
@@ -17,13 +17,13 @@ const LogoBox = styled.span`
 `
 
 const Logo = () => {
-    const codeImg = '/orb+sideTXT.png'
+
 
     return (
         <Link href='/'>
             <a>
                 <LogoBox>
-                    <Image src={codeImg} width='100%' height='30%' alt='logo' />
+                    <Image src={logo} width='100%' height='30%' alt='logo' />
                 </LogoBox>
             </a>
         </Link>

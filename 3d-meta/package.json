@@ -22,6 +22,7 @@
     "gsap": "^3.10.4",
     "mouse-follower": "^1.0.3",
     "next": "12.1.5",
+    "next-images": "^1.8.4",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-media": "^1.10.0",

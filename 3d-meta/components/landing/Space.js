@@ -32,7 +32,6 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
         
 
         return (
-                    // <AstronautModel id='astro' ref={mesh} />
                             <animated.group position={position} rotation={rotation} ref={mesh} dispose={null} >
                                     <group
                                         position={[-1.103, 0, -0.753]}

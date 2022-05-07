@@ -21,6 +21,8 @@
     "framer-motion": "^6.3.0",
     "gsap": "^3.10.4",
     "next": "12.1.5",
+    "next-compose-plugins": "^2.2.1",
+    "next-images": "^1.8.4",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-media": "^1.10.0",

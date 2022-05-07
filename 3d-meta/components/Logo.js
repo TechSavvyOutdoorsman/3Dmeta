@@ -18,7 +18,7 @@ const LogoBox = styled.span`
 
 const Logo = () => {
 
-    const navLogo = `${process.env.PUBLIC_URL}images/orb+sideTXT.svg`
+    const navLogo = '/images/orb+sideTXT.svg'
 
     return (
         <Link href='/'>

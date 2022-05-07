@@ -42,7 +42,7 @@ const Landing = () => {
             bg='mBlack.900'
             >
             <Flex pt={{ base: '8rem', md: '0' }} paddingX={4} position='absolute' zIndex={1} gap={2} flexDir='column' textAlign='center'>
-                <Heading ref={heading1} lineHeight={{ base: '32px', md: '47px' }} as='h1' color='mWhite.100' fontSize={{ base: 'xx-large', md: 'xxx-large'}}>We Create Unparalled Digital Experiences</Heading>
+                <Heading ref={heading1} lineHeight={{ base: '32px', md: '47px' }} as='h1' color='mWhite.100' fontSize={{ base: 'xx-large', md: 'xxx-large'}} fontWeight='semibold'>We Create Unparalled Digital Experiences</Heading>
                 <Heading ref={heading2} lineHeight={{ base: '20px', md: '24px' }} as='h3' color='mWhite.200' fontSize={{ base: 'large', md: 'x-large' }} fontWeight='medium'>Web Applications & Custom Software Solutions That Dominate The Virtual Space.</Heading>
                 <Flex ref={heading3} gap={2} pt={2} align='center' justify='center'>
                     <Button variant='solid' bg='meta.500' color='mWhite.100'>Start a Project</Button>                    

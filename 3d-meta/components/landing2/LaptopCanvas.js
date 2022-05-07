@@ -2,8 +2,9 @@ import { useRef, Suspense,  } from 'react'
 import { Canvas, } from '@react-three/fiber'
 import { Stars, Loader, useGLTF, Environment, Float, OrbitControls,  } from '@react-three/drei'
 import { useSpring, animated, easings } from '@react-spring/three'
-import { Box as FlexBox, } from '@react-three/flex'
+import { Flex, Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+
 
 
 
@@ -29,7 +30,7 @@ const Laptop = (props) => {
                     
                     
 return (
-    <group position={[ 0, 0, 0]} ref={group} {...props} dispose={null}>
+    <group scale={20} ref={group} {...props} dispose={null}>
         <group
           position={[-0.3, 0, 0.02]}
           rotation={[-Math.PI / 2, 0, 0]}
@@ -112,16 +113,17 @@ const LaptopCanvas = () => {
                 <Suspense fallback={null}>
                         {/* <Stars /> */}
                         <ambientLight intensity={1} color='#FFFFFF'  />
-                            <FlexBox width='auto' height='auto' flexGrow={1} centerAnchor>
-                                <Float
-                                    speed={5}
-                                    rotationIntensity={0.15}
-                                    floatIntensity={0.15}
-                                >
-                                    <Laptop />
-                                </Float>
-                            </FlexBox>
-                    {/* <OrbitControls /> */}
+                            <Flex>
+                                <FlexBox flexGrow={1} width='auto' height='auto' centerAnchor>
+                                    <Float
+                                        speed={5}
+                                        rotationIntensity={0.15}
+                                        floatIntensity={0.15}
+                                    >
+                                        <Laptop />
+                                    </Float>
+                                </FlexBox>
+                            </Flex>
                     <Environment preset='night' />
                 </Suspense>
             </Canvas>

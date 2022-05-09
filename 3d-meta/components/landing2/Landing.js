@@ -31,6 +31,7 @@ const LandingTwo = () => {
                     as='h2' 
                     fontSize={{ base: 'large', md: 'x-large'}} 
                     fontWeight='medium'
+                    color='mWhite.100'
                 >
                     Websites
                 </Heading>
@@ -38,6 +39,7 @@ const LandingTwo = () => {
                     as='p' 
                     fontSize={{ base: 'medium', md: 'large'}} 
                     fontWeight='thin'
+                    color='mWhite.100'
                 >
                 Developing websites is about so much more than marketing. 
                 It’s also about aesthetics. For us, your site is the face of your company. 

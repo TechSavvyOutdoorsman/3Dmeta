@@ -12,25 +12,25 @@ const Laptop = (props) => {
     const group = useRef()
     const { nodes, materials } = useGLTF('/threeD/laptop-meta.glb')
     
-    // const { position, rotation } = useSpring({
-        //     to: {
-            //         position: [0.6, 0.1, 4.8],
-            //         rotation: [-0.2, 0, 0]
-            //     }, 
-            //     from: {
-                //         position: [0.6, -6, 0]
-                //     },
-                //     delay: 300,
-                //     config: {
-                    //         duration: 1500,
-                    //         easing: easings.easeOutQuint
-                    //     }
-                    // })
+    const { position, rotation } = useSpring({
+            to: {
+                    position: [ 0, -50, -400 ],
+                    rotation: [ -Math.PI / 0.53, 0, 0]
+                }, 
+                from: {
+                        position: [ 0, -350, -400 ]
+                    },
+                    // delay: 300,
+                    config: {
+                            duration: 1500,
+                            easing: easings.easeOutQuint
+                        }
+                    })
                     
                     
                     
 return (
-    <group position={[ 0, -50, -400 ]} rotation={[ -Math.PI / 0.53, 0, 0]} scale={1} ref={group} {...props} dispose={null}>
+    <animated.group position={position} rotation={rotation} scale={1} ref={group} {...props} dispose={null}>
         <group
           position={[-0.3, 0, 0.02]}
           rotation={[-Math.PI / 2, 0, 0]}
@@ -97,7 +97,7 @@ return (
             position={[0, 7.66, 0]}
           />
         </group>
-      </group>
+      </animated.group>
 
     )
 }

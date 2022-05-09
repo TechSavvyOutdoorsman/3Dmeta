@@ -30,11 +30,11 @@ const Laptop = (props) => {
                     
                     
 return (
-    <group scale={20} ref={group} {...props} dispose={null}>
+    <group position={[ 0, -50, -400 ]} rotation={[ -Math.PI / 0.53, 0, 0]} scale={1} ref={group} {...props} dispose={null}>
         <group
           position={[-0.3, 0, 0.02]}
           rotation={[-Math.PI / 2, 0, 0]}
-          scale={0}
+          scale={1}
         >
           <mesh
             geometry={nodes.Body.geometry}

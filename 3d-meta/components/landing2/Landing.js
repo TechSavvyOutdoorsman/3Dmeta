@@ -17,7 +17,7 @@ const LandingTwo = () => {
             paddingX={6} 
             bg='mBlack.900'
         >
-            <Flex h='500px' maxW='500px' align='center' justify='center'>
+            <Flex h='300px' w='400px' align='center' justify='center'>
                 <LaptopCanvas />
             </Flex>
             <Flex 

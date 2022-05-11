@@ -1,6 +1,6 @@
 import { useRef, Suspense,  } from 'react'
 import { Canvas, } from '@react-three/fiber'
-import { Loader, useGLTF, Environment, Float,  } from '@react-three/drei'
+import { useGLTF, Environment, Float,  } from '@react-three/drei'
 // import { useSpring, animated, easings } from '@react-spring/three'
 import { Flex, Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
@@ -8,11 +8,11 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 const Mobile = (props) => {
     const group = useRef();
-    const { nodes, materials } = useGLTF("/threeD/mobile.glb");
+    const { nodes, materials } = useGLTF("/threeD/mobile-white.glb");
 
     return (
       <group   position={[-1, 0.4, 4.9]} rotation={[ -Math.PI / 0.0558, 0, 0]} ref={group} {...props} dispose={null}>
-        <group
+         <group
         position={[0.50331493, 0, -0.10058819]}
         rotation={[-Math.PI / 2, 0, 0]}
         scale={0.001}
@@ -127,7 +127,7 @@ const Mobile = (props) => {
     );
   }
   
-  useGLTF.preload(GLTFLoader, "/threeD/mobile.glb");
+  useGLTF.preload(GLTFLoader, "/threeD/mobile-white.glb");
   
   const AppCanvas = () => {
       return (
@@ -140,8 +140,8 @@ const Mobile = (props) => {
                                 <FlexBox flexGrow={1} width='auto' height='auto' centerAnchor>
                                     <Float
                                         speed={5}
-                                        rotationIntensity={0.02}
-                                        floatIntensity={0.02}
+                                        rotationIntensity={0.015}
+                                        floatIntensity={0.015}
                                     >
                                         <Mobile />
                                     </Float>
@@ -150,7 +150,6 @@ const Mobile = (props) => {
                     <Environment preset='night' />
                 </Suspense>
             </Canvas>
-            <Loader />
         </>
     )
 }

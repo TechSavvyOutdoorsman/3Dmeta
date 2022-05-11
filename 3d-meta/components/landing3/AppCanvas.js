@@ -1,7 +1,7 @@
 import { useRef, Suspense,  } from 'react'
 import { Canvas, } from '@react-three/fiber'
 import { Loader, useGLTF, Environment, Float,  } from '@react-three/drei'
-import { useSpring, animated, easings } from '@react-spring/three'
+// import { useSpring, animated, easings } from '@react-spring/three'
 import { Flex, Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 

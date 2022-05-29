@@ -11,5 +11,11 @@ const withTM = require('next-transpile-modules')(['three'])
 // }
 module.exports = withPlugins([
   [withTM],
-  [withImages]
-])
+  [withImages],
+]), {
+  compiler: {
+    // Enables the styled-components SWC transform
+    styledComponents: true
+  }
+}
+

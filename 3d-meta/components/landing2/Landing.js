@@ -13,7 +13,7 @@ const LandingTwo = () => {
             gap={{ base: '4rem', md: '3rem'}}
             align='center' 
             flexDir={{ base: 'column', md: 'row' }} 
-            paddingY={{ base: '6rem', md: '10rem' }} 
+            paddingY={{ base: '12rem', md: '18rem' }} 
             paddingX={6} 
             bg='mBlack.900'
         >

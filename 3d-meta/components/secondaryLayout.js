@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { Box, Flex } from '@chakra-ui/react'
-import Navbar from './navbar'
 
 
 const Layout = ({ children, title }) => {

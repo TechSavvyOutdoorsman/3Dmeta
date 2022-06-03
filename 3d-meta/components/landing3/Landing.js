@@ -10,7 +10,7 @@ const LandingThree = () => {
     return (
         <Flex 
             justify={{ base: 'space-between', md: 'space-evenly'}} 
-            gap={{ base: '4rem', md: '3rem'}}
+            gap={{ base: '6rem', md: '3rem'}}
             align='center' 
             flexDir={{ base: 'column-reverse', md: 'row' }} 
             paddingY={{ base: '12rem', md: '18rem' }} 

@@ -12,6 +12,7 @@ import {
     Textarea,
     Input, 
     Text,
+    Heading
 
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
@@ -19,54 +20,65 @@ import { Formik, Form, useField, useFormikContext } from 'formik'
 import * as Yup from 'yup'
 import Layout from '../components/secondaryLayout'
 
+
+
 const MyTextInput = ({ label, ...props }) => {
     // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
     // which we can spread on <input> and alse replace ErrorMessage entirely.
     const [field, meta] = useField(props)
     return (
-      <>
-        <label htmlFor={props.id || props.name}>{label}</label>
-        <input className="text-input" {...field} {...props} />
-        {meta.touched && meta.error ? (
-          <div className="error">{meta.error}</div>
-        ) : null}
-      </>
+      <Flex flexDir='column' gap={4} minW='400px'>
+            <Flex flexDir='column' gap={1}>             
+                <StyledLabel htmlFor={props.id || props.name}>{label}</StyledLabel>
+                <StyledInput className="text-input" {...field} {...props} />
+                {meta.touched && meta.error ? (
+                <StyledErrorMessage>{meta.error}</StyledErrorMessage>
+                ) : null}
+            </Flex>      
+      </Flex>
     )
   }
 
   // Styled components ....
+
+const StyledInput = styled.input`
+    padding: .5rem;
+    border-radius: 30px;
+
+`
+
 const StyledSelect = styled.select`
-color: blue;
+    color: blue;
 `
 
 const StyledErrorMessage = styled.div`
-font-size: 12px;
-color: red;
-width: 400px;
-margin-top: 0.25rem;
-&:before {
-  content: "❌ ";
-  font-size: 10px;
-}
+    font-size: 12px;
+    color: red;
+    width: 400px;
+    margin-top: 0.25rem;
+    &:before {
+    content: "❌ ";
+    font-size: 10px;
+    }
 `
 
 const StyledLabel = styled.label`
-margin-top: 1rem;
+    margin-top: 1rem;
 `
 
 const MySelect = ({ label, ...props }) => {
-// useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-// which we can spread on <input> and alse replace ErrorMessage entirely.
-const [field, meta] = useField(props)
-return (
-  <>
-    <StyledLabel htmlFor={props.id || props.name}>{label}</StyledLabel>
-    <StyledSelect {...field} {...props} />
-    {meta.touched && meta.error ? (
-      <StyledErrorMessage>{meta.error}</StyledErrorMessage>
-    ) : null}
-  </>
-)
+    // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
+    // which we can spread on <input> and alse replace ErrorMessage entirely.
+    const [field, meta] = useField(props)
+    return (
+    <>
+        <StyledLabel htmlFor={props.id || props.name}>{label}</StyledLabel>
+        <StyledSelect {...field} {...props} />
+        {meta.touched && meta.error ? (
+        <StyledErrorMessage>{meta.error}</StyledErrorMessage>
+        ) : null}
+    </>
+    )
 }
 
 
@@ -74,7 +86,7 @@ return (
 const SignupForm = () => {
     return (
       <>
-        <h1>Subscribe!</h1>
+        <Heading as='h1' fontSize='xx-large'>Contact me (;</Heading>
         <Formik
           initialValues={{
             firstName: "",
@@ -132,7 +144,7 @@ const SignupForm = () => {
               <option value="31+">$31,000 - $40,000</option>
               <option value="41+">$41,000 +</option>
             </MySelect>
-            <button type="submit">Submit</button>
+            <Button mt={4} type='submit' variant='solid'>Submit</Button>
           </Form>
         </Formik>
       </>

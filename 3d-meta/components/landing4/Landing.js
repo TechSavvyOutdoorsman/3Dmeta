@@ -10,7 +10,7 @@ const SvgHolder = ({ src, alt }) => {
     
     return (
         <Box p={0} m={0} >
-            <Image src={src} alt={alt} />
+            <Image layout='fill' src={src} alt={alt} />
         </Box>
     )
 }

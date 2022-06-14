@@ -20,7 +20,7 @@ const LandingFour = () => {
 
     return (
         <Box m={0} p={0} bg='mBlack.900' >
-            <SvgHolder src='/images/gray-spacer-top.svg' alt='Top of grey background image' />
+            <SvgHolder src='/images/gray-spacer-top2.svg' alt='Top of grey background image' />
             <Flex
                 flexDir='column'
                 align='center'
@@ -52,7 +52,7 @@ const LandingFour = () => {
                     <InfoRect src='/images/red-plus.svg' alt='Red Plus' heading='Lightning Fast' text='This is what the text should say but I honestly have no idea what this will look like.' />
                 </Flex>
             </Flex>
-            <SvgHolder src='/images/gray-spacer-btm.svg' alt='Bottom of grey background image' />
+            <SvgHolder src='/images/gray-spacer-btm2.svg' alt='Bottom of grey background image' />
         </Box>
     )
 }

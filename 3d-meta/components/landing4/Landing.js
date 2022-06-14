@@ -9,8 +9,8 @@ import InfoRect from './InfoRect'
 const SvgHolder = ({ src, alt }) => {
     
     return (
-        <Box p={0} m={0} minW='100%' >
-            <Image layout='fill' src={src} alt={alt} />
+        <Box p={0} m={0} backgroundSize='cover' >
+            <Image  src={src} alt={alt} />
         </Box>
     )
 }

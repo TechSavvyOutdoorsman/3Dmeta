@@ -20,7 +20,7 @@ const LandingFour = () => {
 
     return (
         <Box m={0} p={0} bg='mBlack.900' >
-            <SvgHolder src='/images/gray-spacer-top2.svg' alt='Top of grey background image' />
+            <SvgHolder src='/images/gray-spacer-top3.svg' alt='Top of grey background image' />
             <Flex
                 flexDir='column'
                 align='center'

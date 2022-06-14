@@ -1,7 +1,5 @@
 import { 
-    Heading,
     Flex,
-    Text,
 } from '@chakra-ui/react'
 
 
@@ -17,7 +15,7 @@ const LandingFive = () => {
             paddingX={6} 
             bg='mBlack.900'
         >
-            
+
         </Flex>
     )
 }

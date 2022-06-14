@@ -52,7 +52,7 @@ const LandingFour = () => {
                     <InfoRect src='/images/red-plus.svg' alt='Red Plus' heading='Lightning Fast' text='This is what the text should say but I honestly have no idea what this will look like.' />
                 </Flex>
             </Flex>
-            <SvgHolder src='/images/gray-spacer-btm2.svg' alt='Bottom of grey background image' />
+            <SvgHolder src='/images/gray-spacer-btm3.svg' alt='Bottom of grey background image' />
         </Box>
     )
 }

@@ -19,13 +19,13 @@ const LogoBox = styled.span`
 
 const Logo = () => {
 
-    const img = '/images/orb+sideTXT.png'
+    const navImg = '/images/orb+sideTXT.svg'
 
     return (
         <Link href='/'>
             <a>
                 <LogoBox>
-                    <Image src={img} width={100} height={30} alt='logo' />
+                    <Image src={navImg} width={100} height={30} alt='logo' />
                 </LogoBox>
             </a>
         </Link>

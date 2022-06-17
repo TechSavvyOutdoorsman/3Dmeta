@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styled from '@emotion/styled'
 
 
+
 const LogoBox = styled.span`
     display: inline-flex;
     align-items: center;
@@ -18,13 +19,13 @@ const LogoBox = styled.span`
 
 const Logo = () => {
 
-    const navLogo = '/images/orb+sideTXT.svg'
+    const img = '/orb+sideTXT.png'
 
     return (
         <Link href='/'>
             <a>
                 <LogoBox>
-                    <Image src={navLogo} width={100} height={30} alt='logo' />
+                    <Image src={img} width={100} height={30} alt='logo' />
                 </LogoBox>
             </a>
         </Link>

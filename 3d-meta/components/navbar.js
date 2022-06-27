@@ -75,7 +75,7 @@ const LinkItem = ({ href, path, children }) => {
     )
 }
 
-const Navbar= (props) => {
+const Navbar = (props) => {
     const { path } = props 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef()

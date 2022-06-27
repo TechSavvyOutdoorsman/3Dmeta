@@ -1,5 +1,9 @@
+import { useRef } from 'react'
 import NextLink from 'next/link'
 import Logo from './Logo'
+import DrawerList from './DrawerList'
+import CtaButton from './CtaButton'
+import styled from '@emotion/styled'
 import {
     Container,
     Box,
@@ -12,19 +16,66 @@ import {
     MenuList,
     MenuButton,
     IconButton,
+    Drawer,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerBody,
+    DrawerFooter,
+
+    DrawerCloseButton,
+    DrawerHeader,
+    useDisclosure,
+    useColorModeValue
+
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 
 
+const NavIconWrapper = styled.span`
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    width: 1.5rem;
+    margin-right: 0.75rem;
+    transform: scale(-1, 1);
+
+    @media(min-width: 885px){
+        display: none;
+    }
+`
+
+const NavIconLongBar = styled.span`
+    min-width: 100%;
+    height: 3px;
+    background: #080705;
+    border-radius: 3px;
+`
+
+const NavIconShortBar = styled.span`
+    max-width: 0.5rem;
+    height: 3px;
+    background: #080705;
+    border-radius: 3px;
+`
+
+
 const LinkItem = ({ href, path, children }) => {
-    const inactiveColor = 'mWhite.200'
+    const inactiveColor = 'mBlack.900'
     const active = path === href
     return (
         <NextLink href={href} passHref>
             <Link
-                p={2}
+                pr={4}
+                pl={4}
                 color={active ? 'meta.500' : inactiveColor}
-                fontFamily='Nunito'
+                fontFamily='heading'
+                fontWeight='bold'
+                fontSize='16px'
+                borderRadius='30px'
+                _hover={{
+                    textStyle: 'none',
+                    bg: 'mWhite.100'
+                }}
             >
                 {children}
             </Link>
@@ -34,23 +85,27 @@ const LinkItem = ({ href, path, children }) => {
 
 const Navbar = (props) => {
     const { path } = props 
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const btnRef = useRef()
+
 
     return (
         <Box
-        paddingY={{ base: 0, md: '.5rem' }}
-        position='fixed'
-        as='nav'
-        w='100%'
-        bg='mBlack.900'
-        style={{ 
-            backdropFilter: 'blur(10px)', 
-            WebkitBackdropFilter: 'blur(10px)',
-            '&(maxWidth: 599px)': {
-                height: '50%',
-            }
-        }}
-        zIndex={5}
-        {...props}
+            paddingY={{ base: 0, md: '.5rem' }}
+            position='fixed'
+            as='nav'
+            w='100%'
+            bg='nav.500'
+            zIndex={5}
+            boxShadow='0 0.125rem .25rem #AFAFAF'
+            style={{ 
+                backdropFilter: 'blur(10px)', 
+                WebkitBackdropFilter: 'blur(10px)',
+                '&(maxWidth: 599px)': {
+                    height: '50%',
+                }
+            }}
+            {...props}
         >
             <Container
                 display='flex'
@@ -64,7 +119,7 @@ const Navbar = (props) => {
                     <Heading 
                         as='h1'
                         size='lg'
-                        letterSpacing={'tighter'}
+                        letterSpacing='tighter'
                     >
                         <Logo /> 
                     </Heading>
@@ -77,41 +132,69 @@ const Navbar = (props) => {
                     width='100%'
                     alignItems='center'
                     flexGrow={1}
-                    mt={{ base: 4, nmd: 0}}
+                    mt={{ base: 4, nmd: 0 }}
                 >
                     <LinkItem href='/works' path={path}>
-                        Works
+                        Portfolio
                     </LinkItem>
                     <LinkItem href='/posts' path={path}>
-                        Posts
+                        Contact
                     </LinkItem>
+                    <CtaButton>Start a Project</CtaButton>
                 </Stack>
 
                 <Box flex={1} align='right'>
+                    
 
-                    <Box ml={2} display={{ base: 'inline-block', md: 'none'}}>
-                        <Menu>
-                            <MenuButton
-                                as={IconButton} 
-                                icon={<HamburgerIcon />}
-                                variant='outline'
-                                aria-label='Options'
-                            />
+                    <Box ml={2} pt={1.75} display={{ base: 'inline-block', md: 'none' }}>
+                        
+                        <NavIconWrapper ref={btnRef} onClick={onOpen} aria-label='Open Menu'>
+                                <NavIconLongBar />
+                                <NavIconLongBar />
+                                <NavIconShortBar />
+                            {/* <IconButton  ref={btnRef} onClick={onOpen} icon={<HamburgerIcon />} variant='ghost' aria-label='Open Menu' /> */}
+                        </NavIconWrapper>
 
-                        <MenuList bg='mBlack.800' color='mWhite.100'>
-                            <NextLink href='/' passHref>
-                                <MenuItem as={Link}>Portfolio</MenuItem>
-                            </NextLink>
-                            <NextLink href='/works' passHref>
-                                <MenuItem as={Link}>About</MenuItem>
-                            </NextLink>
-                            <NextLink href='/posts' passHref>
-                                <MenuItem as={Link}>Start a Project</MenuItem>
-                            </NextLink>
-                            {/* <MenuItem as={Link} href='https://www.github.com/techsavvyoutdoorsman/brams-website'>View Source Code</MenuItem> */}
-                            
-                        </MenuList>
-                        </Menu>
+                        <Drawer
+                            isOpen={isOpen}
+                            onClose={onClose}
+                            placement='right'
+                        
+                        >
+                            <DrawerOverlay />
+                            <DrawerContent
+                                background='nav.500'
+                                blur={0.8}
+                            >
+
+                                <DrawerHeader>
+                                    <DrawerCloseButton color='mBlack.900' sx={{
+                                        _focus: {
+                                            ring: 1,
+                                            ringColor: 'home.200'
+                                        }
+                                    }}/>
+                                    
+                                </DrawerHeader>
+
+                                <DrawerBody
+                                    mt={5}
+                                    align='right'
+                                    fontSize={21}
+                                    pr={5}
+                                    onClose={onClose}
+                                    color={useColorModeValue('mono.900', 'mono.100')}
+                                >
+
+                                <DrawerList onClose={onClose}  />
+
+                                </DrawerBody>
+
+
+                            </DrawerContent>
+
+                        </Drawer>
+                
                     </Box>
                 </Box>
             </Container>

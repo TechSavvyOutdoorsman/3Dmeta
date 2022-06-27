@@ -13,7 +13,7 @@ const DrawerListItem = ({ href, children, id, delay=0, onClose }) => {
 
             <AnimatePresence initial={false} >
 
-                <NextLink href={href}>
+                <NextLink passHref={href}>
                     <MotionText
                     key={id}
                     initial={{y: 10, opacity: 0}}

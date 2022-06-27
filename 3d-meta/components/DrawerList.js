@@ -55,7 +55,7 @@ const DrawerList = ({ onClose }) => {
             </DrawerListItem>
             <DrawerListItem
                 delay={0.05}
-                href='/start'
+                href='/'
                 id='start'
                 onClose={onClose}
             >

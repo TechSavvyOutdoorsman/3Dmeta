@@ -75,7 +75,7 @@ const LinkItem = ({ href, path, children }) => {
     )
 }
 
-const Navbar = (props) => {
+const Nav = (props) => {
     const { path } = props 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef()
@@ -195,4 +195,4 @@ const Navbar = (props) => {
     )
 }
 
-export default Navbar
+export default Nav

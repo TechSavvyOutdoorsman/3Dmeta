@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Box } from '@chakra-ui/react'
-import Nav from './Navbar'
+import Nav from '../components/Navbar'
 
 
 const Layout = ({ children, router }) => {

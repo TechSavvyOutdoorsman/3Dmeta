@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Box } from '@chakra-ui/react'
-import Navbar from '../components/Navbar'
+import { Navbar } from './Navbar'
 
 
 const Layout = ({ children, router }) => {
@@ -12,8 +12,8 @@ const Layout = ({ children, router }) => {
                 <link rel='shortcut icon' href='/images/orb-1.png' />
                 <link rel='favicon' href='/images/orb-1.png' />
             </Head>
-            <Navbar path={router.asPath} /> 
             <Box p={0} m={0}>
+            <Navbar path={router.asPath} /> 
                 {children}
             </Box>
         </Box>

@@ -11,24 +11,16 @@ import {
     Stack,
     Heading,
     Flex,
-    Menu,
-    MenuItem,
-    MenuList,
-    MenuButton,
-    IconButton,
     Drawer,
     DrawerOverlay,
     DrawerContent,
     DrawerBody,
-    DrawerFooter,
-
     DrawerCloseButton,
     DrawerHeader,
     useDisclosure,
     useColorModeValue
 
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
 
 
 const NavIconWrapper = styled.span`
@@ -47,14 +39,14 @@ const NavIconWrapper = styled.span`
 const NavIconLongBar = styled.span`
     min-width: 100%;
     height: 3px;
-    background: #080705;
+    background: #262626;
     border-radius: 3px;
 `
 
 const NavIconShortBar = styled.span`
-    max-width: 0.5rem;
+    max-width: 0.95rem;
     height: 3px;
-    background: #080705;
+    background: #262626;
     border-radius: 3px;
 `
 
@@ -97,7 +89,7 @@ const Navbar = (props) => {
             w='100%'
             bg='nav.500'
             zIndex={5}
-            boxShadow='0 0.125rem .25rem #AFAFAF'
+            boxShadow='0 0.125rem .25rem #C8C8C8'
             style={{ 
                 backdropFilter: 'blur(10px)', 
                 WebkitBackdropFilter: 'blur(10px)',
@@ -133,6 +125,7 @@ const Navbar = (props) => {
                     alignItems='center'
                     flexGrow={1}
                     mt={{ base: 4, nmd: 0 }}
+                    mr={4}
                 >
                     <LinkItem href='/works' path={path}>
                         Portfolio

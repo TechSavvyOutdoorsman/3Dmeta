@@ -1,9 +1,12 @@
 import { useEffect, useRef } from 'react'
 import {
     Flex,
+    Spacer, 
     Button,
-    Heading, 
+    Heading,
+    Box,
 } from '@chakra-ui/react'
+import LaptopCanvas from './LaptopCanvas'
 import CtaButton from '../CtaButton'
 import { gsap } from 'gsap'
 import NoSsr from '../No-Ssr'
@@ -36,20 +39,59 @@ const Landing = () => {
 
     return (
         <Flex
-            h={{ base: '90vh', md: '100vh'}}
-            flexDir='column'
+            h={{ base: '90vh', md: '100vh' }}
+            direction='column'
+            justify='space-between'
+            paddingX={4}
             align='center'
-            justify={{ base: 'space-between', md: 'space-between' }}
             bg='bg.500'
+        >
+            <Flex
+                pt={{ base: '5.5rem', md: '13rem' }}
+                position='absolute'
+                zIndex={1}
+                gap={2}
+                flexDir='column'
+                textAlign='center'
             >
-            <Flex pt={{ base: '8rem', md: '13rem' }} paddingX={4} position='absolute' zIndex={1} gap={2} flexDir='column' textAlign='center'>
-                <Heading lineHeight={{ base: '40px', md: '65px' }} as='h1' color='mBlack.900' fontSize={{ base: '40px', md: '64px'}} fontWeight='bold'>We Create Unparalled Digital Experiences</Heading>
-                <Heading lineHeight={{ base: '20px', md: '24px' }} as='h3' color='mBlack.900' fontSize={{ base: 'large', md: 'x-large' }} fontWeight='medium'>Web Applications & Custom Software Solutions That Dominate The Virtual Space.</Heading>
-                <Flex mt={8} align='center' justify='center'>
-                    <CtaButton scale={'scale(1.5)'}>Start a Project</CtaButton>                             
+                <Heading
+                    lineHeight={{ base: '32px', md: '65px' }}
+                    as='h1'
+                    color='mBlack.900'
+                    fontSize={{ base: '32px', md: '64px' }}
+                    fontWeight='bold'
+                >
+                    Custom Websites and Applications
+                </Heading>
+                <Heading
+                    lineHeight={{ base: '20px', md: '24px' }}
+                    as='h3'
+                    color='mBlack.800'
+                    fontSize={{ base: 'large', md: 'x-large' }}
+                    fontWeight='medium'
+                >
+                    We're Here to Help You Dominate The Virtual Space
+                </Heading>
+                <Flex
+                    mt={{ base: '1rem', }}
+                    align='center'
+                    justify='center'
+                >
+                    <CtaButton
+                        scale={'scale(1.25)'}
+                    >
+                        Start a Project
+                    </CtaButton>
                 </Flex>
             </Flex>
-
+            <Spacer />
+            <Box
+                pb={8}
+                align='center'
+                h={{ base: '40%', md: '60%' }}
+            >
+                <LaptopCanvas />
+            </Box>
         </Flex>
     )
 }

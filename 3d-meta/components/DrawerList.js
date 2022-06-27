@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import NextLink  from 'next/link'
-import { Text, Divider, Flex, useColorModeValue } from '@chakra-ui/react'
+import { Text, Flex, } from '@chakra-ui/react'
 
 
 

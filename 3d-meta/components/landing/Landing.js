@@ -1,15 +1,15 @@
-import { useEffect, useRef } from 'react'
+// import { useEffect, useRef } from 'react'
 import {
     Flex,
     Spacer, 
-    Button,
+    // Button,
     Heading,
     Box,
 } from '@chakra-ui/react'
 import LaptopCanvas from './LaptopCanvas'
 import CtaButton from '../CtaButton'
-import { gsap } from 'gsap'
-import NoSsr from '../No-Ssr'
+// import { gsap } from 'gsap'
+// import NoSsr from '../No-Ssr'
 
 
 const Landing = () => {
@@ -70,7 +70,7 @@ const Landing = () => {
                     fontSize={{ base: 'large', md: 'x-large' }}
                     fontWeight='medium'
                 >
-                    We're Here to Help You Dominate The Virtual Space
+                    We&apos;re Here to Help You Dominate The Virtual Space
                 </Heading>
                 <Flex
                     mt={{ base: '1rem', }}

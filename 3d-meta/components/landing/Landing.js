@@ -41,6 +41,7 @@ const Landing = () => {
         <Flex
             h={{ base: '90vh', md: '100vh' }}
             direction='column'
+            align='center'
             px={4}
             pt='5rem'
             pb='2rem'
@@ -50,6 +51,9 @@ const Landing = () => {
                     paddingTop: '9rem',
                     paddingBottom: '5rem'
                 },
+                '@media (min-width: 48em)': {
+                    paddingTop: '14rem'
+                }
             }}
         >
             <Flex
@@ -63,7 +67,7 @@ const Landing = () => {
                 align='center'
             >
                 <Heading
-                    lineHeight={{ base: '32px', md: '65px' }}
+                    lineHeight={{ base: '32px', sm: '42px', md: '65px' }}
                     as='h1'
                     color='mBlack.900'
                     fontSize={{ base: '32px', md: '64px' }}
@@ -98,6 +102,7 @@ const Landing = () => {
             <Box
                 align='center'
                 h={{ base: '40%', md: '60%' }}
+                w='100%'
             >
                 <LaptopCanvas />
             </Box>

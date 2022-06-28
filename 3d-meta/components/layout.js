@@ -13,8 +13,8 @@ const Layout = ({ children, router }) => {
                 <link rel='favicon' href='/images/orb-1.png' />
             </Head>
             <Box p={0} m={0}>
-            <Navbar path={router.asPath} /> 
-                {children}
+                <Navbar path={router.asPath} /> 
+                    {children}
             </Box>
         </Box>
     )

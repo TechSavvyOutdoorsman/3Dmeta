@@ -42,7 +42,6 @@ const Landing = () => {
             h={{ base: '90vh', md: '100vh' }}
             direction='column'
             align='center'
-            textAlign='center'
             px={4}
             pt='5rem'
             pb='2rem'
@@ -60,7 +59,6 @@ const Landing = () => {
             <Flex
                 // pt={{ base: '5.5rem', md: '13rem' }}
                 paddingX={2}
-                position='absolute'
                 zIndex={1}
                 gap={2}
                 flexDir='column'

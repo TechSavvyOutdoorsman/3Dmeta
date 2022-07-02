@@ -65,6 +65,7 @@ const Landing = () => {
                 flexDir='column'
                 textAlign='center'
                 align='center'
+                justify='center'
             >
                 <Heading
                     lineHeight={{ base: '32px', sm: '42px', md: '65px' }}

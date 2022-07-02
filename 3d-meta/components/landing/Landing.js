@@ -42,6 +42,7 @@ const Landing = () => {
             h={{ base: '90vh', md: '100vh' }}
             direction='column'
             align='center'
+            justify='center'
             px={4}
             pt='5rem'
             pb='2rem'

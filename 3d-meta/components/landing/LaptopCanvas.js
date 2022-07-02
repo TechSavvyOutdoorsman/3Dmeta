@@ -4,7 +4,7 @@ import { useGLTF, Environment, Float  } from '@react-three/drei'
 import { useSpring, animated, easings } from '@react-spring/three'
 import { Flex, Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { RGBA_ASTC_10x10_Format } from 'three'
+
 
 
 const WhiteOrb = (props) => {
@@ -19,7 +19,7 @@ const WhiteOrb = (props) => {
             position: [ -110, 580, -200 ]
         },
         config: {
-            duration: 3000,
+            duration: 4000,
             easing: easings.easeInOutElastic
         },
         delay: 350
@@ -50,7 +50,7 @@ const LightGrayOrb = (props) => {
             position: [ 160, 540, -300 ]
         },
         config: {
-            duration: 3000,
+            duration: 4000,
             easing: easings.easeInOutElastic
         },
         delay: 400
@@ -81,7 +81,7 @@ const DarkGrayOrb = (props) => {
             position: [ -300, 620, -600]
         },
         config: {
-            duration: 3000,
+            duration: 4000,
             easing: easings.easeInOutElastic
         },
         delay: 200

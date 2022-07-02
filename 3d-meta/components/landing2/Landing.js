@@ -3,7 +3,7 @@ import {
     Flex,
     Text,
 } from '@chakra-ui/react'
-import LaptopCanvas from './LaptopCanvas'
+
 
 const LandingTwo = () => {
 
@@ -15,10 +15,10 @@ const LandingTwo = () => {
             flexDir={{ base: 'column', md: 'row' }} 
             paddingY={{ base: '6rem', md: '10rem' }} 
             paddingX={6} 
-            bg='mBlack.900'
+            bg='mWhite.300'
         >
             <Flex h='300px' maxW='400px' align='center' justify='center'>
-                <LaptopCanvas />
+
             </Flex>
             <Flex 
                 flexDir='column' 

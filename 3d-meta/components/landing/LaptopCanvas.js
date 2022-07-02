@@ -4,14 +4,29 @@ import { useGLTF, Environment, Float  } from '@react-three/drei'
 import { useSpring, animated, easings } from '@react-spring/three'
 import { Flex, Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { RGBA_ASTC_10x10_Format } from 'three'
 
 
 const WhiteOrb = (props) => {
     const group = useRef()
-    const { nodes, materials} = useGLTF('/threeD/whiteOrb.glb')
+    const { nodes, materials } = useGLTF('/threeD/whiteOrb.glb')
+    
+    const { position } = useSpring({
+        to: {
+            position: [ -110, -80, -200 ]
+        },
+        from: {
+            position: [ -110, 580, -200 ]
+        },
+        config: {
+            duration: 3000,
+            easing: easings.easeInOutElastic
+        },
+        delay: 350
+    })
 
     return (
-        <group ref={group} position={[-110, -80, -200]} scale={0.45}  {...props} dispose={null}>
+        <animated.group ref={group} position={position} scale={0.45}  {...props} dispose={null}>
             <mesh
                 geometry={nodes.Sphere.geometry}
                 material={materials.Shelton}
@@ -19,16 +34,30 @@ const WhiteOrb = (props) => {
                 rotation={[-Math.PI / 2, 0, 0]}
                 scale={1}      
             />
-        </group>
+        </animated.group>
     )
 }
 
 const LightGrayOrb = (props) => {
     const group = useRef()
-    const { nodes, materials} = useGLTF('/threeD/lightGrayOrb.glb')
+    const { nodes, materials } = useGLTF('/threeD/lightGrayOrb.glb')
+    
+    const { position } = useSpring({
+        to: {
+            position: [ 160, 140, -300 ]
+        },
+        from: {
+            position: [ 160, 540, -300 ]
+        },
+        config: {
+            duration: 3000,
+            easing: easings.easeInOutElastic
+        },
+        delay: 400
+    })
 
     return (
-        <group ref={group} position={[160, 140, -300]} scale={0.45}  {...props} dispose={null}>
+        <animated.group ref={group} position={position} scale={0.45}  {...props} dispose={null}>
             <mesh
                 geometry={nodes.Sphere.geometry}
                 material={materials.Shelton}
@@ -36,16 +65,30 @@ const LightGrayOrb = (props) => {
                 rotation={[-Math.PI / 2, 0, 0]}
                 scale={1}      
             />
-        </group>
+        </animated.group>
     )
 }
 
 const DarkGrayOrb = (props) => {
     const group = useRef()
-    const { nodes, materials} = useGLTF('/threeD/darkGrayOrb.glb')
+    const { nodes, materials } = useGLTF('/threeD/darkGrayOrb.glb')
+    
+    const { position } = useSpring({
+        to: {
+            position: [ -300, -20, -600 ]
+        },
+        from: {
+            position: [ -300, 620, -600]
+        },
+        config: {
+            duration: 3000,
+            easing: easings.easeInOutElastic
+        },
+        delay: 200
+    })
 
     return (
-        <group ref={group} position={[-300, -20, -600]} scale={0.45}  {...props} dispose={null}>
+        <animated.group ref={group} position={position} scale={0.45}  {...props} dispose={null}>
             <mesh
                 geometry={nodes.Sphere.geometry}
                 material={materials.Shelton}
@@ -53,7 +96,7 @@ const DarkGrayOrb = (props) => {
                 rotation={[-Math.PI / 2, 0, 0]}
                 scale={1}      
             />
-        </group>
+        </animated.group>
     )
 }
 
@@ -66,14 +109,15 @@ const Laptop = (props) => {
     const { position, rotation } = useSpring({
             to: {
                     position: [ 0, -50, -350 ],
-                    rotation: [ -Math.PI / 0.53, 0, 0]
+                    rotation: [ Math.PI / 8, 0, 0]
                 }, 
                 from: {
-                        position: [ 0, -350, -400 ]
+                    // position: [0, -350, -400],
+                    rotation: [ 0, Math.PI / 0.2, 0]
                     },
                     // delay: 300,
                     config: {
-                            duration: 1500,
+                            duration: 2500,
                             easing: easings.easeOutQuint
                         }
                     })
@@ -166,13 +210,31 @@ const LaptopCanvas = () => {
                                 <Flex>
                                     <FlexBox flexGrow={1} width='auto' height='auto' centerAnchor>
                                         <Float
-                                            speed={5}
-                                            rotationIntensity={0.15}
+                                            speed={4}
+                                            rotationIntensity={0.2}
                                             floatIntensity={0.15}
                                         >
                                             <DarkGrayOrb />
+                                        </Float>
+                                        <Float
+                                            speed={6}
+                                            rotationIntensity={0.15}
+                                            floatIntensity={0.3}
+                                        >
                                             <LightGrayOrb />
+                                        </Float>
+                                        <Float
+                                            speed={8}
+                                            rotationIntensity={0.03}
+                                            floatIntensity={0.05}
+                                        >
                                             <WhiteOrb />
+                                        </Float>
+                                        <Float
+                                            speed={2}
+                                            rotationIntensity={0.15}
+                                            floatIntensity={0.15}
+                                        >
                                             <Laptop />
                                         </Float>
                                     </FlexBox>

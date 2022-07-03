@@ -9,12 +9,12 @@ import {
 import LaptopCanvas from './LaptopCanvas'
 import CtaButton from '../CtaButton'
 import { gsap } from 'gsap'
-// import NoSsr from '../No-Ssr'
+import NoSsr from '../No-Ssr'
 
 
 const Landing = () => {
     
-    const tl1 = useRef()
+    // const tl1 = useRef()
     const heading1 = useRef()
     const heading2 = useRef()
     const heading3 = useRef()
@@ -107,7 +107,9 @@ const Landing = () => {
                 h={{ base: '40%', md: '60%' }}
                 w='100%'
             >
-                <LaptopCanvas />
+                <NoSsr>
+                    <LaptopCanvas />
+                </NoSsr>
             </Box>
         </Flex>
     )

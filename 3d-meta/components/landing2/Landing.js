@@ -3,6 +3,8 @@ import {
     Flex,
     Text,
 } from '@chakra-ui/react'
+import MedHeading from '../MedHeading'
+import Step from './Step'
 
 
 const LandingTwo = () => {
@@ -12,40 +14,23 @@ const LandingTwo = () => {
             justify={{ base: 'space-between', md: 'space-evenly'}} 
             gap={{ base: '4rem', md: '3rem'}}
             align='center' 
-            flexDir={{ base: 'column', md: 'row' }} 
-            paddingY={{ base: '6rem', md: '10rem' }} 
+            flexDir='column' 
+            paddingY='6rem' 
             paddingX={6} 
-            bg='mWhite.300'
+            bg='mWhite.100'
         >
-            <Flex h='300px' maxW='400px' align='center' justify='center'>
-
-            </Flex>
-            <Flex 
-                flexDir='column' 
-                maxW='350px' 
-                align='left' 
-                justify='left' 
-                textAlign='left' 
-                gap={6}
-            >
-                <Heading 
-                    as='h2' 
-                    fontSize={{ base: 'large', md: 'x-large'}} 
-                    fontWeight='medium'
-                    color='mWhite.100'
-                >
-                    Websites
-                </Heading>
-                <Text 
-                    as='p' 
-                    fontSize={{ base: 'medium', md: 'large'}} 
-                    fontWeight='thin'
-                    color='mWhite.100'
-                >
-                Developing websites is about so much more than marketing. 
-                It’s also about aesthetics. For us, your site is the face of your company. 
-                Let’s make it stunning.
-                </Text>
+            <MedHeading heading='Our Process Creates Consistent Results' headingColor='mBlack.900' subHead='PROCESS' subHeadColor='meta.500' />
+            <Flex flexDir='column' gap={12}>
+                <Flex flexDir={{ base: 'column', md: 'row'}} gap={12} justify='center'>
+                    <Step number='1' heading='RESEARCH' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
+                    <Step number='2' heading='CONTENT' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
+                    <Step number='3' heading='discovery' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
+                </Flex>
+                <Flex flexDir='column' gap={12} flexDir={{ base: 'column', md: 'row'}} justify='center'>
+                    <Step number='4' heading='design' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
+                    <Step number='5' heading='Development' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
+                    <Step number='6' heading='release' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
+                </Flex>
             </Flex>
         </Flex>
     )

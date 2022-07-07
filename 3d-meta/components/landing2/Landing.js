@@ -1,7 +1,5 @@
 import { 
-    Heading,
     Flex,
-    Text,
 } from '@chakra-ui/react'
 import MedHeading from '../MedHeading'
 import Step from './Step'

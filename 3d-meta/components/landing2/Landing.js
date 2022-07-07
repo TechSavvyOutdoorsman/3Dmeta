@@ -24,7 +24,7 @@ const LandingTwo = () => {
                     <Step number='2' heading='CONTENT' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
                     <Step number='3' heading='discovery' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
                 </Flex>
-                <Flex flexDir='column' gap={12} flexDir={{ base: 'column', md: 'row'}} justify='center'>
+                <Flex gap={12} flexDir={{ base: 'column', md: 'row'}} justify='center'>
                     <Step number='4' heading='design' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
                     <Step number='5' heading='Development' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
                     <Step number='6' heading='release' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />

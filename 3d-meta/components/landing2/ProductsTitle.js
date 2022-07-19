@@ -6,7 +6,7 @@ import {
 const Title = () => {
     return (
         <Flex align='left' textAlign='left'>
-            <Heading as='h1' fontSize='xx-large' color='mBlack.900'>Our  Products</Heading>
+            <Heading as='h1' fontSize='xx-large' color='mBlack.900'>Our Products</Heading>
         </Flex>
     )
 }

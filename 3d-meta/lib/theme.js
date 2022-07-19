@@ -23,6 +23,7 @@ const components = {
 
 const fonts = { 
     heading: "'Nunito'",
+    body: "'Nunito Sans'"
 }
 
 const colors = {
@@ -35,17 +36,27 @@ const colors = {
         800: '#470FF4'
     },
     meta: {
+        400: '#E74444',
         500: '#AF0000',
         600: '#7A0000'
     },
     mWhite: {
         100: '#FFFFFF',
-        200: '#EFEFEF'
+        200: '#EFEFEF',
+        300: '#999999',
+        400: '#747474'
     },
     mBlack: {
         800: '#49443A',
         850: '#39362F',
         900: '#080705'
+    },
+    nav: {
+        500: '#D9D9D9',
+        550: '#C8C8C8',
+    },
+    bg: {
+        500: '#D0D0D0'
     }
 }
 

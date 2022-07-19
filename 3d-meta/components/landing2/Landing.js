@@ -1,55 +1,55 @@
 import { 
-    Heading,
-    Flex,
-    Text,
+    Flex
 } from '@chakra-ui/react'
-import LaptopCanvas from './LaptopCanvas'
+import TextBlock from './TextBlock'
+import LandingTextBlock from '../LandingTextBlock'
+import Title from './ProductsTitle'
+import Container from './Container'
+import ImageContainer from './ImageContainer'
+import MobileImageContainer from './MobileImageContainer'
+
+
+// grab images 
+const meta = '/images/meta-screenshot.jpg'
+const webApp = '/images/webApp-screenshot.png'
+const mobileApp = '/images/mobileApp-screenshot.png'
 
 const LandingTwo = () => {
-
     return (
-        <Flex 
-            justify={{ base: 'space-between', md: 'space-evenly'}} 
-            gap={{ base: '4rem', md: '3rem'}}
-            align='center' 
-            flexDir={{ base: 'column', md: 'row' }} 
-            paddingY={{ base: '6rem', md: '10rem' }} 
-            paddingX={6} 
-            bg='mBlack.900'
+        <Flex
+            flexDir='column'
+            py={{ base: '4rem', md: '8rem' }}
+            px={{ base: '1rem', md: '8rem' }}
+            bg='bg.500'
+            gap={{ base: '5rem', md: '18rem'}}
         >
-            <Flex h='300px' maxW='400px' align='center' justify='center'>
-                <LaptopCanvas />
-            </Flex>
-            <Flex 
-                flexDir='column' 
-                maxW='350px' 
-                align='left' 
-                justify='left' 
-                textAlign='left' 
-                gap={6}
+            <Flex
+                flexDir='column'
+                gap={{ base: '6rem', md: '6rem' }}
+                maxW='container.xl'
+                align='left'
+                gap='15rem'
             >
-                <Heading 
-                    as='h2' 
-                    fontSize={{ base: 'large', md: 'x-large'}} 
-                    fontWeight='medium'
-                    color='mWhite.100'
-                >
-                    Websites
-                </Heading>
-                <Text 
-                    as='p' 
-                    fontSize={{ base: 'medium', md: 'large'}} 
-                    fontWeight='thin'
-                    color='mWhite.100'
-                >
-                Developing websites is about so much more than marketing. 
-                It’s also about aesthetics. For us, your site is the face of your company. 
-                Let’s make it stunning.
-                </Text>
+                <LandingTextBlock>Leading digital agency with solid design and development expertise. We build readymade websites, mobile applications, and elaborate online business services.</LandingTextBlock>
+                <Title>Our Products</Title>
             </Flex>
+
+            <Container>
+                <ImageContainer src={meta} alt='Screenshot of Website made by METATECH Digital' />
+                <TextBlock heading='Websites' body='All our websites are incredibly fast, visually stunning, and memorable.' />
+            </Container>
+
+            <Container>
+                <ImageContainer src={webApp} alt='Screenshot of Web Application made by METATECH Digital' />
+                <TextBlock heading='Web Applications' body='Our applications are not only aesthetically pleasing, but purpose-built tools to help you make more money.' />
+            </Container>
+            
+            <Container>
+                <MobileImageContainer src={mobileApp} alt='Screenshot of Mobile Application made by METATECH Digital' />
+                <TextBlock heading='Mobile Applications' body='Mobile applications with design your users will love using.' />
+            </Container>
         </Flex>
     )
 }
-
 
 export default LandingTwo

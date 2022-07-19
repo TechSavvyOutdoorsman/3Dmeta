@@ -9,12 +9,12 @@ const Layout = ({ children, router }) => {
             <Head>
                 <meta name='viewport' content='width=device-width, initial-scale=1' />
                 <title>METATECH Digital - Homepage</title>
-                <link rel='shortcut icon' href='/images/orb.svg' />
-                <link rel='favicon' href='/images/orb.svg' />
+                <link rel='shortcut icon' href='/images/orb-1.png' />
+                <link rel='favicon' href='/images/orb-1.png' />
             </Head>
-            <Navbar path={router.asPath} /> 
             <Box p={0} m={0}>
-                {children}
+                <Navbar path={router.asPath} /> 
+                    {children}
             </Box>
         </Box>
     )

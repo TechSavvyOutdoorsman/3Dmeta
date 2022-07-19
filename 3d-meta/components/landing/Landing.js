@@ -1,12 +1,16 @@
 import { useEffect, useRef } from 'react'
 import {
     Flex,
-    Button,
-    Heading, 
+    Spacer, 
+    // Button,
+    Heading,
+    Box,
 } from '@chakra-ui/react'
+import LaptopCanvas from './LaptopCanvas'
+import CtaButton from '../CtaButton'
 import { gsap } from 'gsap'
 import NoSsr from '../No-Ssr'
-import Space from './Space'
+
 
 const Landing = () => {
     
@@ -35,23 +39,78 @@ const Landing = () => {
 
     return (
         <Flex
-            h={{ base: '90vh', md: '100vh'}}
-            flexDir='column'
+            h={{ base: '90vh', md: '100vh' }}
+            direction='column'
             align='center'
-            justify={{ base: 'space-between', md: 'center' }}
-            bg='mBlack.900'
+            px={4}
+            pt='5rem'
+            pb='2rem'
+            bg='bg.500'
+            sx={{
+                '@media (min-height: 600px)': {
+                    paddingTop: '9rem',
+                    paddingBottom: '5rem'
+                },
+                '@media (min-width: 48em)': {
+                    paddingTop: '14rem'
+                }
+            }}
+        >
+            <Flex
+                // pt={{ base: '5.5rem', md: '13rem' }}
+                paddingX={2}
+                zIndex={1}
+                gap={2}
+                flexDir='column'
+                textAlign='center'
+                align='center'
+                justify='center'
             >
-            <Flex pt={{ base: '8rem', md: '0' }} paddingX={4} position='absolute' zIndex={1} gap={2} flexDir='column' textAlign='center'>
-                <Heading ref={heading1} lineHeight={{ base: '32px', md: '47px' }} as='h1' color='mWhite.100' fontSize={{ base: 'xx-large', md: 'xxx-large'}} fontWeight='semibold'>We Create Unparalled Digital Experiences</Heading>
-                <Heading ref={heading2} lineHeight={{ base: '20px', md: '24px' }} as='h3' color='mWhite.200' fontSize={{ base: 'large', md: 'x-large' }} fontWeight='medium'>Web Applications & Custom Software Solutions That Dominate The Virtual Space.</Heading>
-                <Flex ref={heading3} gap={2} pt={2} align='center' justify='center'>
-                    <Button variant='solid' bg='meta.500' color='mWhite.100'>Start a Project</Button>                    
-                    <Button variant='solid' bg='mWhite.100' color='mBlack.900'>Start a Project</Button>                    
+                <Heading
+                    ref={heading1}
+                    lineHeight={{ base: '32px', sm: '42px', md: '65px' }}
+                    as='h1'
+                    color='mBlack.900'
+                    fontSize={{ base: '32px', md: '64px' }}
+                    fontWeight='bold'
+                >
+                    Custom Websites and Applications
+                </Heading>
+                <Box maxW={{ base: '250px', md: '100%'}} >
+                    <Heading
+                        ref={heading2}
+                        lineHeight={{ base: '20px', md: '24px' }}
+                        as='h3'
+                        color='mBlack.800'
+                        fontSize={{ base: 'large', md: 'x-large' }}
+                        fontWeight='medium'
+                    >
+                        We&apos;re Here to Help You Dominate The Virtual Space
+                    </Heading>
+                </Box>
+                <Flex
+                    ref={heading3}
+                    mt={{ base: '1rem', }}
+                    align='center'
+                    justify='center'
+                >
+                    <CtaButton
+                        scale={'scale(1.25)'}
+                    >
+                        Start a Project
+                    </CtaButton>
                 </Flex>
             </Flex>
-            <NoSsr>
-                <Space zIndex={0} />
-            </NoSsr>
+            <Spacer />
+            <Box
+                align='center'
+                h={{ base: '40%', md: '60%' }}
+                w='100%'
+            >
+                <NoSsr>
+                    <LaptopCanvas />
+                </NoSsr>
+            </Box>
         </Flex>
     )
 }

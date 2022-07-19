@@ -1,38 +1,55 @@
 import { 
-    Flex,
+    Flex
 } from '@chakra-ui/react'
-import MedHeading from '../MedHeading'
-import Step from './Step'
+import TextBlock from './TextBlock'
+import LandingTextBlock from '../LandingTextBlock'
+import Title from './ProductsTitle'
+import Container from './Container'
+import ImageContainer from './ImageContainer'
+import MobileImageContainer from './MobileImageContainer'
 
+
+// grab images 
+const meta = '/images/meta-screenshot.jpg'
+const webApp = '/images/webApp-screenshot.png'
+const mobileApp = '/images/mobileApp-screenshot.png'
 
 const LandingTwo = () => {
-
     return (
-        <Flex 
-            justify={{ base: 'space-between', md: 'space-evenly'}} 
-            gap={{ base: '4rem', md: '3rem'}}
-            align='center' 
-            flexDir='column' 
-            paddingY='6rem' 
-            paddingX={6} 
-            bg='mWhite.100'
+        <Flex
+            flexDir='column'
+            py={{ base: '4rem', md: '8rem' }}
+            px={{ base: '1rem', md: '8rem' }}
+            bg='bg.500'
+            gap={{ base: '5rem', md: '18rem'}}
         >
-            <MedHeading heading='Our Process Creates Consistent Results' headingColor='mBlack.900' subHead='PROCESS' subHeadColor='meta.500' />
-            <Flex flexDir='column' gap={12}>
-                <Flex flexDir={{ base: 'column', md: 'row'}} gap={12} justify='center'>
-                    <Step number='1' heading='RESEARCH' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
-                    <Step number='2' heading='CONTENT' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
-                    <Step number='3' heading='discovery' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
-                </Flex>
-                <Flex gap={12} flexDir={{ base: 'column', md: 'row'}} justify='center'>
-                    <Step number='4' heading='design' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
-                    <Step number='5' heading='Development' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
-                    <Step number='6' heading='release' text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.' />
-                </Flex>
+            <Flex
+                flexDir='column'
+                gap={{ base: '6rem', md: '6rem' }}
+                maxW='container.xl'
+                align='left'
+                gap='15rem'
+            >
+                <LandingTextBlock>Leading digital agency with solid design and development expertise. We build readymade websites, mobile applications, and elaborate online business services.</LandingTextBlock>
+                <Title>Our Products</Title>
             </Flex>
+
+            <Container>
+                <ImageContainer src={meta} alt='Screenshot of Website made by METATECH Digital' />
+                <TextBlock heading='Websites' body='All our websites are incredibly fast, visually stunning, and memorable.' />
+            </Container>
+
+            <Container>
+                <ImageContainer src={webApp} alt='Screenshot of Web Application made by METATECH Digital' />
+                <TextBlock heading='Web Applications' body='Our applications are not only aesthetically pleasing, but purpose-built tools to help you make more money.' />
+            </Container>
+            
+            <Container>
+                <MobileImageContainer src={mobileApp} alt='Screenshot of Mobile Application made by METATECH Digital' />
+                <TextBlock heading='Mobile Applications' body='Mobile applications with design your users will love using.' />
+            </Container>
         </Flex>
     )
 }
-
 
 export default LandingTwo

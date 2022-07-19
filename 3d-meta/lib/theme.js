@@ -23,6 +23,7 @@ const components = {
 
 const fonts = { 
     heading: "'Nunito'",
+    body: "'Nunito Sans'"
 }
 
 const colors = {

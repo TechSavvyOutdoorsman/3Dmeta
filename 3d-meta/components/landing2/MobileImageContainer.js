@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import {
     Flex,
-    Box,
 } from '@chakra-ui/react'
 
 const MobileImageContainer = ({ src, alt }) => {

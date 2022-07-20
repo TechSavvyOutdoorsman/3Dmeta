@@ -21,11 +21,11 @@ const LandingTwo = () => {
             py={{ base: '4rem', md: '8rem' }}
             px={{ base: '1rem', md: '8rem' }}
             bg='bg.500'
-            gap={{ base: '5rem', md: '18rem'}}
+            gap={{ base: '10rem', md: '18rem'}}
         >
             <Flex
                 flexDir='column'
-                gap={{ base: '9rem', md: '18rem' }}
+                gap='8rem'
                 maxW='container.xl'
                 align='left'
             >

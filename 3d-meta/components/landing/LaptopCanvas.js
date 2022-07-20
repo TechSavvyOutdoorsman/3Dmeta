@@ -13,7 +13,7 @@ const WhiteOrb = (props) => {
     
     const { position } = useSpring({
         to: {
-            position: [ -110, -80, -200 ]
+            position: [ -110, -40, -200 ]
         },
         from: {
             position: [ -110, 580, -200 ]

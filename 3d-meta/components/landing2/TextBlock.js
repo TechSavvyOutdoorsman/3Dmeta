@@ -11,8 +11,8 @@ const TextBlock = ({ heading, body }) => {
             gap='1rem'
             maxW='container.md'
         >
-            <Heading as='h2' color='mBlack.900'>{heading}</Heading>
-            <Text as='p' color='mBlack.900' lineHeight='6'>{body}</Text>
+            <Heading as='h2' color='mBlack.900' fontSize='x-large' fontWeight='semibold'>{heading}</Heading>
+            <Text as='p' color='mBlack.900' lineHeight='6' fontSize='large'>{body}</Text>
         </Flex>
     )
 }

@@ -2,7 +2,7 @@ import {
     Flex
 } from '@chakra-ui/react'
 import TextBlock from './TextBlock'
-import LandingTextBlock from '../LandingTextBlock'
+import LandingTextBlock from './LandingTextBlock'
 import Title from './ProductsTitle'
 import Container from './Container'
 import ImageContainer from './ImageContainer'

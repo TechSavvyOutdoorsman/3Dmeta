@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react'
 import {
     Flex,
     Spacer, 
-    // Button,
     Heading,
     Box,
 } from '@chakra-ui/react'
@@ -67,9 +66,9 @@ const Landing = () => {
                 justify='center'
             >
                 <Heading
+                    as='h1'
                     ref={heading1}
                     lineHeight={{ base: '32px', sm: '42px', md: '65px' }}
-                    as='h1'
                     color='mBlack.900'
                     fontSize={{ base: '32px', md: '64px' }}
                     fontWeight='bold'
@@ -104,7 +103,7 @@ const Landing = () => {
             <Spacer />
             <Box
                 align='center'
-                h={{ base: '40%', md: '60%' }}
+                h={{ base: '45%', md: '60%' }}
                 w='100%'
             >
                 <NoSsr>

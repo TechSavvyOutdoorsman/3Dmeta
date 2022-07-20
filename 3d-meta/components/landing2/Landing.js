@@ -25,7 +25,7 @@ const LandingTwo = () => {
         >
             <Flex
                 flexDir='column'
-                gap={{ base: '6rem', md: '15rem' }}
+                gap={{ base: '9rem', md: '18rem' }}
                 maxW='container.xl'
                 align='left'
             >

@@ -25,10 +25,9 @@ const LandingTwo = () => {
         >
             <Flex
                 flexDir='column'
-                gap={{ base: '6rem', md: '6rem' }}
+                gap={{ base: '6rem', md: '15rem' }}
                 maxW='container.xl'
                 align='left'
-                gap='15rem'
             >
                 <LandingTextBlock>Leading digital agency with solid design and development expertise. We build readymade websites, mobile applications, and elaborate online business services.</LandingTextBlock>
                 <Title>Our Products</Title>

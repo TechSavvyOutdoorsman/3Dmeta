@@ -25,7 +25,6 @@ const LandingThree = () => {
             >
                 <Flex
                     transform='skewY(-8deg)'
-                    bg='bg.500'
                     pos='relative'
                     margin='0 auto'
                     justify='center'

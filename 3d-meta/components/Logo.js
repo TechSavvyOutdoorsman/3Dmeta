@@ -25,7 +25,7 @@ const Logo = () => {
         <Link href='/'>
             <a>
                 <LogoBox>
-                    <Image src={navImg} layout='fill' alt='logo' />
+                    <Image src={navImg} layout='fill' alt='logo' priority />
                 </LogoBox>
             </a>
         </Link>

@@ -7,9 +7,8 @@ const Decor = ({ src, alt, width, height }) => {
     return (
         <Box
             display='block'
-            position='relative'
-            overflow='hidden'
-            
+            height='220px'
+            width='100%'
         >
             <Image width={width} height={height} layout='responsive' src={src} alt={alt} />
         </Box>

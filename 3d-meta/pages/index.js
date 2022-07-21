@@ -11,6 +11,7 @@ export default function Home() {
     <Flex
       flexDir='column'
       id='container'
+      bg='bg.500'
     >
       <Landing />
       <LandingTwo />

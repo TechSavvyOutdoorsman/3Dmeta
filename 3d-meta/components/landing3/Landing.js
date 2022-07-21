@@ -1,11 +1,8 @@
 import {
     Flex,
-    Heading
 } from '@chakra-ui/react'
 import MedHeading from '../MedHeading'
 
-const top = '/images/top-decor.png'
-const btm = '/images/btm-decor.png'
 
 
 

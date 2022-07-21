@@ -10,15 +10,12 @@ const LandingThree = () => {
     return (
         <>
             <Flex 
-                // justify={{ base: 'space-between', md: 'space-evenly'}} 
-                // gap={{ base: '4rem', md: '3rem'}}
                 align='center' 
                 flexDir='column' 
                 py={{ base: '8rem', xl: '12rem'}}
-                // my='2rem'
                 mt={{ base: '5rem', xl: '12rem'}}
                 mb={{ base: '8rem', xl: '12rem' }}
-                // px={6} 
+                px={12} 
                 bg='mBlack.800'
                 pos='relative'
                 transform='skewY(8deg)'

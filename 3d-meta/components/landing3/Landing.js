@@ -28,7 +28,6 @@ const LandingThree = () => {
                     bg='bg.500'
                     pos='relative'
                     margin='0 auto'
-                    maxWidth='50em'
                     justify='center'
                     align='center'
                     bg='mBlack.800'

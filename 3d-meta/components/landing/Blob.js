@@ -1,44 +1,10 @@
 import { useRef, Suspense,  } from 'react'
-import { Canvas, useLoader } from '@react-three/fiber'
-import { useGLTF, PerspectiveCamera, Float, Sphere, useTexture } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
+import { useGLTF, PerspectiveCamera, Float } from '@react-three/drei'
 import { animated, } from '@react-spring/three'
 import { Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
-
-const ThreeOrb = (props) => {
-    const [colorMap, displacementMap, normalMap, roughnessMap, metalnessMap] = useTexture([
-        '/threeD/textures/Metal2/color.jpg',
-        '/threeD/textures/Metal2/displacement.jpg',
-        '/threeD/textures/Metal2/normal.jpg',
-        '/threeD/textures/Metal2/roughness.jpg',
-        '/threeD/textures/Metal2/metalness.jpg',
-    ])
-
-
-    return (
-        <Sphere position={[-2, 2, -8]} scale={1}>
-            <meshPhongMaterial color='#747474' map={colorMap} displacementScale={0} normalScale={0.1} displacementMap={displacementMap} normalMap={normalMap} roughnessMap={roughnessMap} metalnessMap={metalnessMap} />
-        </Sphere> 
-    )
-}
-const TwoOrb = (props) => {
-    const [colorMap, displacementMap, normalMap, roughnessMap, metalnessMap] = useTexture([
-        '/threeD/textures/Metal2/color.jpg',
-        '/threeD/textures/Metal2/displacement.jpg',
-        '/threeD/textures/Metal2/normal.jpg',
-        '/threeD/textures/Metal2/roughness.jpg',
-        '/threeD/textures/Metal2/metalness.jpg',
-    ])
-
-
-    return (
-        <Sphere position={[0, 0, -15]} scale={2}>
-            {/* <ambientLight color='#ffffff' intensity={3} /> */}
-            <meshPhongMaterial color='#49443A' emissive='#48443A' shininess={1} displacementScale={0.1} normalScale={0.1} map={colorMap} displacementMap={displacementMap} normalMap={normalMap} roughnessMap={roughnessMap} metalnessMap={metalnessMap} />
-        </Sphere> 
-    )
-}
 
 
 const LightWhiteOrb = ({ props, position }) => {

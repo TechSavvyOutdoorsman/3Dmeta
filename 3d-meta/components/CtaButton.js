@@ -12,10 +12,10 @@ const CtaButton = ({ children, scale }) => {
             borderRadius='30px'
             color='mWhite.100'
             transform={scale}
-            boxShadow='0 0.25rem .5rem #AFAFAF'
             _hover={{
                 bg: 'meta.400',
-                color: 'mBlack.900'
+                color: 'mWhite.100',
+                // boxShadow: '0 0.25rem .5rem #AFAFAF'
             }}
         >
             <Text

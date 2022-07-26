@@ -43,15 +43,15 @@ const LandingAlt = () => {
                         as='h1'
                         ref={heading1}
                         // maxW={{ base: '300px', lg: '750px'}}
-                        lineHeight={{ base: '32px', sm: '42px', md: '65px', xl: '170px' }}
-                        fontSize={{ base: '32px', md: '64px', xl: '200px' }}
+                        lineHeight={{ base: '50px', md: '65px', xl: '170px' }}
+                        fontSize={{ base: '50px', md: '64px', xl: '200px' }}
                         color='mBlack.900'
                         fontWeight='bold'
                     >
                         Websites & Applications
                     </Heading>
                 </Box>
-                <Box align='left' maxW='container.sm' >
+                <Box align='left' maxW={{ base: '300px', md: 'container.sm'}} >
                     <Heading
                         ref={heading2}
                         lineHeight={{ base: '20px', md: '24px' }}

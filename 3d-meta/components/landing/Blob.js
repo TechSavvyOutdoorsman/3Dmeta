@@ -1,6 +1,6 @@
 import { useRef, Suspense,  } from 'react'
 import { Canvas, } from '@react-three/fiber'
-import { useGLTF, PerspectiveCamera, Float  } from '@react-three/drei'
+import { useGLTF, PerspectiveCamera, Float, MeshDistortMaterial  } from '@react-three/drei'
 import { animated, } from '@react-spring/three'
 import { Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
@@ -25,7 +25,9 @@ const LightWhiteOrb = (props) => {
                     position={[-0.0662462, 0, 0.30364563]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={1}      
-                />
+                >
+                    <MeshDistortMaterial distort={10} speed={20} />
+                </mesh>
             </Float>
         </group>
     )

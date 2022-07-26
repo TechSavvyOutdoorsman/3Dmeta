@@ -87,16 +87,16 @@ const Navbar = props => {
             position='fixed'
             as='nav'
             w='100%'
-            bg='nav.500'
+            // bg='nav.500'
             zIndex={5}
-            boxShadow='0 0.125rem .25rem #C8C8C8'
-            style={{ 
-                backdropFilter: 'blur(10px)', 
-                WebkitBackdropFilter: 'blur(10px)',
-                '&(maxWidth: 599px)': {
-                    height: '50%',
-                }
-            }}
+            // boxShadow='0 0.125rem .25rem #C8C8C8'
+            // style={{ 
+            //     backdropFilter: 'blur(10px)', 
+            //     WebkitBackdropFilter: 'blur(10px)',
+            //     '&(maxWidth: 599px)': {
+            //         height: '50%',
+            //     }
+            // }}
             {...props}
         >
             <Container

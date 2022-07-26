@@ -1,14 +1,12 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import {
     Flex,
-    Spacer, 
     Heading,
     Box,
 } from '@chakra-ui/react'
 import BackgroundCanvas from './Blob'
 import CtaButton from '../CtaButton'
-import { gsap } from 'gsap'
-import NoSsr from '../No-Ssr'
+// import NoSsr from '../No-Ssr'
 
 const LandingAlt = () => {
 

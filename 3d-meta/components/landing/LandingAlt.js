@@ -22,9 +22,7 @@ const LandingAlt = () => {
             borderBottom='black 2px solid'
             pos='relative'
         >
-            <Box pos='absolute'  w='100%' h='100%'>
-                <BackgroundCanvas top='0' right={{ base: '10', md: '0'}} />
-            </Box>
+            <BackgroundCanvas  />
             <Flex
                 flex={1}
                 mb={{ base: '1rem', lg: '3rem'}}

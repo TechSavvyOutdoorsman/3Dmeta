@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import { useRef, Suspense, } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { useGLTF, PerspectiveCamera, Float, Environment } from '@react-three/drei'
+import { useGLTF, PerspectiveCamera, Float } from '@react-three/drei'
 import { animated, } from '@react-spring/three'
 import { Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
@@ -11,19 +11,27 @@ const MetaSphere =  ({ props, position }) => {
     const { nodes, materials } = useGLTF("/threeD/metaSphere5.glb")
 
     return (
-      <group scale={0.5} position={position} ref={group} {...props} dispose={null}>
-        <group
-                position={[2.07, 0.39, 0.02]}
-                rotation={[-Math.PI / 2, 0, 0]}
-                scale={1}
+        <group scale={0.5} position={position} ref={group} {...props} dispose={null}>
+            <Float
+                speed={3}
+                rotationIntensity={0.8}
+                floatIntensity={1.1}
+                floatingRange={[1, 12]}
             >
-                <mesh
-                geometry={nodes["Sphere_6_-_baked"].geometry}
-                material={materials["London 1"]}
-                position={[1.93, 0.3, 54.49]}
-                />
-                <mesh geometry={nodes.Sphere_2.geometry} material={materials.London} />
-            </group>
+
+                <group
+                        position={[2.07, 0.39, 0.02]}
+                        rotation={[-Math.PI / 2, 0, 0]}
+                        scale={1}
+                    >
+                    <mesh
+                    geometry={nodes["Sphere_6_-_baked"].geometry}
+                    material={materials["London 1"]}
+                    position={[1.93, 0.3, 54.49]}
+                    />
+                    <mesh geometry={nodes.Sphere_2.geometry} material={materials.London} />
+                </group>
+            </Float>
         </group>
     )
 }

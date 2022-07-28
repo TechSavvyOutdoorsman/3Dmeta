@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import {
     Flex,
     Heading,
@@ -6,13 +6,32 @@ import {
 } from '@chakra-ui/react'
 import BackgroundCanvas from './Blob'
 import CtaButton from '../CtaButton'
-// import NoSsr from '../No-Ssr'
+import { gsap } from 'gsap'
+
 
 const LandingAlt = () => {
 
     const heading1 = useRef()
     const heading2 = useRef()
     const heading3 = useRef()
+
+    useEffect(() => {
+        let tl1 = new gsap.timeline()
+
+        tl1.from(heading1.current, {
+            opacity: 0,
+            duration: 0.5,
+            delay: 1.5
+        })
+        tl1.from(heading2.current, { 
+            opacity: 0,
+            duration: 0.5, 
+        })
+        tl1.from(heading3.current, { 
+            opacity: 0,
+            duration: 0.5, 
+        })
+    }, [])
 
     return (
         <Flex
@@ -22,7 +41,7 @@ const LandingAlt = () => {
             borderBottom='black 2px solid'
             pos='relative'
         >
-            <BackgroundCanvas  />
+                <BackgroundCanvas  />
             <Flex
                 flex={1}
                 mb={{ base: '1rem', lg: '3rem'}}

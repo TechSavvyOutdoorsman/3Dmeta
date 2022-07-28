@@ -1,10 +1,12 @@
 import { Box } from '@chakra-ui/react'
-import { useRef, Suspense, } from 'react'
+import { useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { useGLTF, PerspectiveCamera, Float } from '@react-three/drei'
-import { animated, } from '@react-spring/three'
+import { useGLTF, PerspectiveCamera, Float, Preload } from '@react-three/drei'
 import { Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { animated, } from '@react-spring/three'
+import NoSsr from '../No-Ssr'
+
 
 const MetaSphere =  ({ props, position }) => {
     const group = useRef()
@@ -13,10 +15,10 @@ const MetaSphere =  ({ props, position }) => {
     return (
         <group scale={0.5} position={position} ref={group} {...props} dispose={null}>
             <Float
-                speed={3}
-                rotationIntensity={0.8}
-                floatIntensity={1.1}
-                floatingRange={[1, 12]}
+                speed={4}
+                rotationIntensity={1.5}
+                floatIntensity={2}
+                floatingRange={[5, 15]}
             >
 
                 <group
@@ -24,11 +26,11 @@ const MetaSphere =  ({ props, position }) => {
                         rotation={[-Math.PI / 2, 0, 0]}
                         scale={1}
                     >
-                    <mesh
-                    geometry={nodes["Sphere_6_-_baked"].geometry}
-                    material={materials["London 1"]}
-                    position={[1.93, 0.3, 54.49]}
-                    />
+                        <mesh
+                        geometry={nodes["Sphere_6_-_baked"].geometry}
+                        material={materials["London 1"]}
+                        position={[1.93, 0.3, 54.49]}
+                        />
                     <mesh geometry={nodes.Sphere_2.geometry} material={materials.London} />
                 </group>
             </Float>
@@ -64,6 +66,9 @@ const LightWhiteOrb = ({ props, position }) => {
 const WhiteOrb = ({ props, position }) => {
     const group = useRef()
     const { nodes, materials } = useGLTF('/threeD/whiteOrb.glb')
+
+
+
     return (
         <animated.group ref={group} position={position} scale={0.65}  {...props} dispose={null}>
             <Float
@@ -135,26 +140,38 @@ const BlackOrb = ({ props, position }) => {
 }
 
 
+const ModelContainer = () => {
+    return (
+        <animated.group>
+            <MetaSphere position={[0, 0, -1400]} />
+            <BlackOrb position={[-30, 0, -700]} />
+            <GrayOrb position={[90, 80, -1905]} />
+            <WhiteOrb position={[-40, 110, -1905]} />
+            <LightWhiteOrb position={[50, -20, -1205]} />  
+        </animated.group>
+    )
+}
 
-const BackgroundCanvas = () => {
+
+
+const BackgroundCanvas = ({ ref }) => {
+
     
     return (
-        <Box pos='absolute' top='0' right='0' w='100%' h='100%'>
-            <Canvas>
-                    <PerspectiveCamera makeDefault fov={15}>
-                    <spotLight position={[-950, 900, 1500]} angle={1} penumbra={1} intensity={4} shadow-mapSize={[1024, 1024]} />
-                    {/* <Environment preset='night' /> */}
+        <Box pos='absolute' top='0' right='0' w='100%' h='100%' ref={ref}>
+            <NoSsr>
+                <Canvas>
                     <Suspense fallback={null}>
-                        <FlexBox>
-                            <MetaSphere position={[0, 0, -1400]} />
-                            <BlackOrb position={[-30, 0, -700]} />
-                            <GrayOrb position={[90, 80, -1905]} />
-                            <WhiteOrb position={[-40, 110, -1905]} />
-                            <LightWhiteOrb position={[50, -20, -1205]} />
-                        </FlexBox>
-                </Suspense> 
-                    </PerspectiveCamera>
-            </Canvas>
+                        <Preload all />
+                        <spotLight position={[-950, 900, 1500]} angle={1} penumbra={1} intensity={4} shadow-mapSize={[1024, 1024]} />
+                        <PerspectiveCamera makeDefault fov={15}>
+                            <FlexBox>
+                                    <ModelContainer />
+                            </FlexBox>
+                        </PerspectiveCamera>
+                    </Suspense> 
+                </Canvas>
+            </NoSsr>
         </Box>
     )
 }

@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import { useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { useGLTF, PerspectiveCamera, Float, Preload } from '@react-three/drei'
+import { useGLTF, PerspectiveCamera, Float, Preload, useProgress, Html } from '@react-three/drei'
 import { Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { animated, } from '@react-spring/three'
@@ -31,7 +31,7 @@ const MetaSphere =  ({ props, position }) => {
                         material={materials["London 1"]}
                         position={[1.93, 0.3, 54.49]}
                         />
-                    <mesh geometry={nodes.Sphere_2.geometry} material={materials.London} />
+                        <mesh geometry={nodes.Sphere_2.geometry} material={materials.London} />
                 </group>
             </Float>
         </group>
@@ -152,7 +152,10 @@ const ModelContainer = () => {
     )
 }
 
-
+const Loader = () => {
+    const { active, progress, errors, items, loaded, total } = useProgress()
+    return <Html center>{progress} & loaded</Html>
+}
 
 const BackgroundCanvas = ({ ref }) => {
 
@@ -161,12 +164,12 @@ const BackgroundCanvas = ({ ref }) => {
         <Box pos='absolute' top='0' right='0' w='100%' h='100%' ref={ref}>
             <NoSsr>
                 <Canvas>
-                    <Suspense fallback={null}>
+                    <Suspense fallback={<Loader />}>
                         <Preload all />
                         <spotLight position={[-950, 900, 1500]} angle={1} penumbra={1} intensity={4} shadow-mapSize={[1024, 1024]} />
                         <PerspectiveCamera makeDefault fov={15}>
                             <FlexBox>
-                                    <ModelContainer />
+                                <ModelContainer />
                             </FlexBox>
                         </PerspectiveCamera>
                     </Suspense> 

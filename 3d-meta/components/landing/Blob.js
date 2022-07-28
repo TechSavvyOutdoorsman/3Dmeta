@@ -43,7 +43,7 @@ const LightWhiteOrb = ({ props, position }) => {
     const { nodes, materials } = useGLTF('/threeD/white100orb.glb')
     
     return (
-        <group ref={group} position={position} scale={0.6}  {...props} dispose={null}>
+        <group ref={group} position={position} scale={0.55}  {...props} dispose={null}>
             <Float
                 speed={4}
                 rotationIntensity={1.2}
@@ -70,12 +70,12 @@ const WhiteOrb = ({ props, position }) => {
 
 
     return (
-        <animated.group ref={group} position={position} scale={0.65}  {...props} dispose={null}>
+        <animated.group ref={group} position={position} scale={0.4}  {...props} dispose={null}>
             <Float
-                speed={3}
-                rotationIntensity={0.8}
-                floatIntensity={1.1}
-                floatingRange={[1, 12]}
+                speed={5}
+                rotationIntensity={1.4}
+                floatIntensity={1.5}
+                floatingRange={[3, 15]}
             >
                 <mesh
                     geometry={nodes.Sphere.geometry}
@@ -146,6 +146,7 @@ const ModelContainer = () => {
             <MetaSphere position={[0, 0, -1400]} />
             <BlackOrb position={[-30, 0, -700]} />
             <GrayOrb position={[90, 80, -1905]} />
+            <WhiteOrb position={[40, 100, -1305]} />
             <WhiteOrb position={[-40, 110, -1905]} />
             <LightWhiteOrb position={[50, -20, -1205]} />  
         </animated.group>

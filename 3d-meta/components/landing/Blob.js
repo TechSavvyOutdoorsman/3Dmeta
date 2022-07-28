@@ -1,10 +1,9 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Spinner, Flex } from '@chakra-ui/react'
 import { useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { useGLTF, PerspectiveCamera, Float, useProgress, Html } from '@react-three/drei'
+import { useGLTF, PerspectiveCamera, Float, useProgress, Html, Preload } from '@react-three/drei'
 import { Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { animated, } from '@react-spring/three'
 import useMediaQuery from '../../hooks/useMediaQuery'
 
 
@@ -70,7 +69,7 @@ const WhiteOrb = ({ props, position }) => {
 
 
     return (
-        <animated.group ref={group} position={position} scale={0.4}  {...props} dispose={null}>
+        <group ref={group} position={position} scale={0.4}  {...props} dispose={null}>
             <Float
                 speed={5}
                 rotationIntensity={1.4}
@@ -85,7 +84,7 @@ const WhiteOrb = ({ props, position }) => {
                     scale={1}      
                 />
             </Float>
-        </animated.group>
+        </group>
     )
 }
 
@@ -145,7 +144,7 @@ const ModelContainer = () => {
     const isDesktop = useMediaQuery('(min-width: 62em')
 
     return (
-        <animated.group>
+        <group>
             <MetaSphere position={isDesktop ? [120, 0, -1400] : [0, 0, -1400]} />
             <BlackOrb position={isDesktop ? [30, 0, -700] : [-30, 0, -700]} />
             <GrayOrb position={isDesktop ? [70, 100, -1300] : [-50, 100, -1300]} />
@@ -153,32 +152,36 @@ const ModelContainer = () => {
             <WhiteOrb position={isDesktop ? [155, 100, -1305] : [40, 100, -1305]} />
             <WhiteOrb position={isDesktop ? [80, 110, -1905] : [-40, 110, -1905]} />
             <LightWhiteOrb position={isDesktop ? [160, -20, -1205] : [50, -20, -1205]} />  
-        </animated.group>
+        </group>
     )
 }
 
-const Loader = () => {
-    const { progress } = useProgress()
-    // active, errors, items, loaded, total
-    return <Html center>{progress}% loaded</Html>
-}
+// const Loader = () => {
+//     const { progress } = useProgress()
+//     // active, errors, items, loaded, total
+//     return (
+//         <Html>
+
+//         </Html>
+//     )
+// }
 
 const BackgroundCanvas = ({ props }) => {
 
     
     return (
         <Box pos='absolute' top='0' right='0' w='100%' h='100%' {...props}>
-                <Canvas>
-                    <Suspense fallback={<Loader />}>
-                        {/* <Preload all /> */}
-                        <spotLight position={[-950, 900, 1500]} angle={1} penumbra={1} intensity={4} shadow-mapSize={[1024, 1024]} />
-                        <PerspectiveCamera makeDefault fov={15}>
-                            <FlexBox>
-                                <ModelContainer />
-                            </FlexBox>
-                        </PerspectiveCamera>
-                    </Suspense> 
-                </Canvas>
+            <Canvas>
+                <Suspense fallback={null}>
+                    <Preload />
+                    <spotLight position={[-950, 900, 1500]} angle={1} penumbra={1} intensity={4} shadow-mapSize={[1024, 1024]} />
+                    <PerspectiveCamera makeDefault fov={15}>
+                        <FlexBox>
+                            <ModelContainer />
+                        </FlexBox>
+                    </PerspectiveCamera>
+                </Suspense> 
+            </Canvas>
         </Box>
     )
 }

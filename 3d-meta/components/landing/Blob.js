@@ -148,9 +148,9 @@ const ModelContainer = () => {
             <MetaSphere position={isDesktop ? [120, 0, -1400] : [0, 0, -1400]} />
             <BlackOrb position={isDesktop ? [30, 0, -700] : [-30, 0, -700]} />
             <GrayOrb position={isDesktop ? [70, 100, -1300] : [-50, 100, -1300]} />
-            <GrayOrb position={isDesktop ? [240, 80, -1900] : [90, 80, -1905]} />
+            {/* <GrayOrb position={isDesktop ? [240, 80, -1900] : [90, 80, -1905]} /> */}
             <WhiteOrb position={isDesktop ? [155, 100, -1305] : [40, 100, -1305]} />
-            <WhiteOrb position={isDesktop ? [80, 110, -1905] : [-40, 110, -1905]} />
+            {/* <WhiteOrb position={isDesktop ? [80, 110, -1905] : [-40, 110, -1905]} /> */}
             <LightWhiteOrb position={isDesktop ? [160, -20, -1205] : [50, -20, -1205]} />  
         </group>
     )

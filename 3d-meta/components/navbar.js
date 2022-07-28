@@ -18,17 +18,32 @@ import {
     DrawerCloseButton,
     DrawerHeader,
     useDisclosure,
-    useColorModeValue
-
+    useColorModeValue,
 } from '@chakra-ui/react'
+
+const NavIconContainer = styled.div`
+    background: #FFFFFF;
+    margin-right: 0.75rem;
+    border-radius: 100%;
+    padding: .75rem;
+    width: 40px;
+    height: 40px;
+
+
+    @media(min-width: 885px){
+        display: none;
+    }
+`
 
 
 const NavIconWrapper = styled.span`
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    gap: 0.2rem;
-    width: 1.5rem;
-    margin-right: 0.75rem;
+    width: 1rem;
+    height: 1rem;
+    gap: 0.15rem;
     transform: scale(-1, 1);
 
     @media(min-width: 885px){
@@ -38,17 +53,11 @@ const NavIconWrapper = styled.span`
 
 const NavIconLongBar = styled.span`
     min-width: 100%;
-    height: 3px;
+    height: 1px;
     background: #262626;
     border-radius: 3px;
 `
 
-const NavIconShortBar = styled.span`
-    max-width: 0.95rem;
-    height: 3px;
-    background: #262626;
-    border-radius: 3px;
-`
 
 
 const LinkItem = ({ href, path, children }) => {
@@ -83,12 +92,12 @@ const Navbar = props => {
 
     return (
         <Box
-            paddingY={{ base: 0, md: '.5rem' }}
+            paddingY={{ base: '1rem', md: '.5rem' }}
             position='fixed'
             as='nav'
             w='100%'
-            // bg='nav.500'
             zIndex={5}
+            // bg='nav.500'
             // boxShadow='0 0.125rem .25rem #C8C8C8'
             // style={{ 
             //     backdropFilter: 'blur(10px)', 
@@ -140,13 +149,14 @@ const Navbar = props => {
                     
 
                     <Box ml={2} pt={1.75} display={{ base: 'inline-block', md: 'none' }}>
-                        
-                        <NavIconWrapper ref={btnRef} onClick={onOpen} aria-label='Open Menu'>
-                                <NavIconLongBar />
-                                <NavIconLongBar />
-                                <NavIconShortBar />
-                            {/* <IconButton  ref={btnRef} onClick={onOpen} icon={<HamburgerIcon />} variant='ghost' aria-label='Open Menu' /> */}
-                        </NavIconWrapper>
+                        <NavIconContainer ref={btnRef} onClick={onOpen} aria-label='Open Menu'>
+                            <NavIconWrapper >
+                                    <NavIconLongBar />
+                                    <NavIconLongBar />
+                                    {/* <NavIconShortBar /> */}
+                                {/* <IconButton  ref={btnRef} onClick={onOpen} icon={<HamburgerIcon />} variant='ghost' aria-label='Open Menu' /> */}
+                            </NavIconWrapper>
+                        </NavIconContainer>
 
                         <Drawer
                             isOpen={isOpen}

@@ -60,8 +60,8 @@ const LandingAlt = () => {
                         as='h1'
                         ref={heading1}
                         // maxW={{ base: '300px', lg: '750px'}}
-                        lineHeight={{ base: '50px', md: '65px', xl: '170px' }}
-                        fontSize={{ base: '50px', md: '64px', xl: '200px' }}
+                        lineHeight={{ base: '45px', md: '65px', xl: '170px' }}
+                        fontSize={{ base: '45px', md: '64px', xl: '200px' }}
                         color='mBlack.900'
                         fontWeight='bold'
                     >

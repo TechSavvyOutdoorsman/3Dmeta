@@ -137,37 +137,10 @@ const BlackOrb = ({ props, position }) => {
         </group>
     )
 }
-
-
-const ModelContainer = () => {
-
-    const isDesktop = useMediaQuery('(min-width: 62em')
-
-    return (
-        <group>
-            <MetaSphere position={isDesktop ? [120, 0, -1400] : [0, 0, -1400]} />
-            <BlackOrb position={isDesktop ? [30, 0, -700] : [-30, 0, -700]} />
-            <GrayOrb position={isDesktop ? [70, 100, -1300] : [-50, 100, -1300]} />
-            <GrayOrb position={isDesktop ? [240, 80, -1900] : [90, 80, -1905]} />
-            <WhiteOrb position={isDesktop ? [155, 100, -1305] : [40, 100, -1305]} />
-            <WhiteOrb position={isDesktop ? [80, 110, -1905] : [-40, 110, -1905]} />
-            <LightWhiteOrb position={isDesktop ? [160, -20, -1205] : [50, -20, -1205]} />  
-        </group>
-    )
-}
-
-// const Loader = () => {
-//     const { progress } = useProgress()
-//     // active, errors, items, loaded, total
-//     return (
-//         <Html>
-
-//         </Html>
-//     )
-// }
-
+        
 const BackgroundCanvas = ({ props }) => {
-
+            
+    const isDesktop = useMediaQuery('(min-width: 62em')
     
     return (
         <Box pos='absolute' top='0' right='0' w='100%' h='100%' {...props}>
@@ -177,7 +150,13 @@ const BackgroundCanvas = ({ props }) => {
                     <spotLight position={[-950, 900, 1500]} angle={1} penumbra={1} intensity={4} shadow-mapSize={[1024, 1024]} />
                     <PerspectiveCamera makeDefault fov={15}>
                         <FlexBox>
-                            <ModelContainer />
+                            <MetaSphere position={isDesktop ? [120, 0, -1400] : [0, 0, -1400]} />
+                            <BlackOrb position={isDesktop ? [30, 0, -700] : [-30, 0, -700]} />
+                            <GrayOrb position={isDesktop ? [70, 100, -1300] : [-50, 100, -1300]} />
+                            <GrayOrb position={isDesktop ? [240, 80, -1900] : [90, 80, -1905]} />
+                            <WhiteOrb position={isDesktop ? [155, 100, -1305] : [40, 100, -1305]} />
+                            <WhiteOrb position={isDesktop ? [80, 110, -1905] : [-40, 110, -1905]} />
+                            <LightWhiteOrb position={isDesktop ? [160, -20, -1205] : [50, -20, -1205]} />  
                         </FlexBox>
                     </PerspectiveCamera>
                 </Suspense> 

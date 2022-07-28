@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import { useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { useGLTF, PerspectiveCamera, Float, Preload, useProgress, Html } from '@react-three/drei'
+import { useGLTF, PerspectiveCamera, Float, useProgress, Html } from '@react-three/drei'
 import { Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { animated, } from '@react-spring/three'
@@ -172,7 +172,7 @@ const BackgroundCanvas = ({ props }) => {
             <NoSsr>
                 <Canvas>
                     <Suspense fallback={<Loader />}>
-                        <Preload all />
+                        {/* <Preload all /> */}
                         <spotLight position={[-950, 900, 1500]} angle={1} penumbra={1} intensity={4} shadow-mapSize={[1024, 1024]} />
                         <PerspectiveCamera makeDefault fov={15}>
                             <FlexBox>

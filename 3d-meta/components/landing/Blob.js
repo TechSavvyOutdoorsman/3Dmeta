@@ -145,6 +145,7 @@ const ModelContainer = () => {
         <animated.group>
             <MetaSphere position={[0, 0, -1400]} />
             <BlackOrb position={[-30, 0, -700]} />
+            <GrayOrb position={[-50, 100, -1300]} />
             <GrayOrb position={[90, 80, -1905]} />
             <WhiteOrb position={[40, 100, -1305]} />
             <WhiteOrb position={[-40, 110, -1905]} />

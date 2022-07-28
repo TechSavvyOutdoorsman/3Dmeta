@@ -5,7 +5,6 @@ import { useGLTF, PerspectiveCamera, Float, useProgress, Html } from '@react-thr
 import { Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { animated, } from '@react-spring/three'
-import NoSsr from '../No-Ssr'
 import useMediaQuery from '../../hooks/useMediaQuery'
 
 
@@ -161,7 +160,7 @@ const ModelContainer = () => {
 const Loader = () => {
     const { progress } = useProgress()
     // active, errors, items, loaded, total
-    return <Html center>{progress} & loaded</Html>
+    return <Html center>{progress}% loaded</Html>
 }
 
 const BackgroundCanvas = ({ props }) => {
@@ -169,7 +168,6 @@ const BackgroundCanvas = ({ props }) => {
     
     return (
         <Box pos='absolute' top='0' right='0' w='100%' h='100%' {...props}>
-            <NoSsr>
                 <Canvas>
                     <Suspense fallback={<Loader />}>
                         {/* <Preload all /> */}
@@ -181,7 +179,6 @@ const BackgroundCanvas = ({ props }) => {
                         </PerspectiveCamera>
                     </Suspense> 
                 </Canvas>
-            </NoSsr>
         </Box>
     )
 }

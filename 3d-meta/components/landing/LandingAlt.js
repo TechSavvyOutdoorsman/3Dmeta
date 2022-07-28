@@ -38,7 +38,6 @@ const LandingAlt = () => {
             h={{ base: '85vh', md: '100vh' }}
             flexDir='column'
             bg='bg.500'
-            borderBottom='black 2px solid'
             pos='relative'
         >
                 <BackgroundCanvas  />

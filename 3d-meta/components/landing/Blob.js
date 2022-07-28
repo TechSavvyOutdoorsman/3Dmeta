@@ -6,6 +6,7 @@ import { Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { animated, } from '@react-spring/three'
 import NoSsr from '../No-Ssr'
+import useMediaQuery from '../../hooks/useMediaQuery'
 
 
 const MetaSphere =  ({ props, position }) => {
@@ -141,15 +142,18 @@ const BlackOrb = ({ props, position }) => {
 
 
 const ModelContainer = () => {
+
+    const isDesktop = useMediaQuery('(min-width: 62em')
+
     return (
         <animated.group>
-            <MetaSphere position={[0, 0, -1400]} />
-            <BlackOrb position={[-30, 0, -700]} />
-            <GrayOrb position={[-50, 100, -1300]} />
-            <GrayOrb position={[90, 80, -1905]} />
-            <WhiteOrb position={[40, 100, -1305]} />
-            <WhiteOrb position={[-40, 110, -1905]} />
-            <LightWhiteOrb position={[50, -20, -1205]} />  
+            <MetaSphere position={isDesktop ? [120, 0, -1400] : [0, 0, -1400]} />
+            <BlackOrb position={isDesktop ? [30, 0, -700] : [-30, 0, -700]} />
+            <GrayOrb position={isDesktop ? [70, 100, -1300] : [-50, 100, -1300]} />
+            <GrayOrb position={isDesktop ? [240, 80, -1900] : [90, 80, -1905]} />
+            <WhiteOrb position={isDesktop ? [155, 100, -1305] : [40, 100, -1305]} />
+            <WhiteOrb position={isDesktop ? [80, 110, -1905] : [-40, 110, -1905]} />
+            <LightWhiteOrb position={isDesktop ? [160, -20, -1205] : [50, -20, -1205]} />  
         </animated.group>
     )
 }
@@ -160,11 +164,11 @@ const Loader = () => {
     return <Html center>{progress} & loaded</Html>
 }
 
-const BackgroundCanvas = ({ ref }) => {
+const BackgroundCanvas = ({ props }) => {
 
     
     return (
-        <Box pos='absolute' top='0' right='0' w='100%' h='100%' ref={ref}>
+        <Box pos='absolute' top='0' right='0' w='100%' h='100%' {...props}>
             <NoSsr>
                 <Canvas>
                     <Suspense fallback={<Loader />}>

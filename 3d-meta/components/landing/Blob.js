@@ -153,7 +153,8 @@ const ModelContainer = () => {
 }
 
 const Loader = () => {
-    const { active, progress, errors, items, loaded, total } = useProgress()
+    const { progress } = useProgress()
+    // active, errors, items, loaded, total
     return <Html center>{progress} & loaded</Html>
 }
 

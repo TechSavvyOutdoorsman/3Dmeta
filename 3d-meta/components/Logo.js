@@ -31,8 +31,8 @@ const Logo = () => {
         tl1.from(logoRef.current, {
             y: -100,
             duration: 0.25,
-            delay: 1.5,
-            ease: 'power1.easeOut'
+            delay: 1,
+            ease: 'bounce.easeOut'
         })
     }, [])
 

@@ -19,18 +19,19 @@ const LandingAlt = () => {
         let tl1 = new gsap.timeline()
 
         tl1.from(heading1.current, {
-            opacity: 0,
-            duration: 0.5,
-            delay: 1.5
+            y: 10,
+            duration: 0.2,
+            delay: 1,
+            ease: 'power4.easeOut'
         })
-        tl1.from(heading2.current, { 
-            opacity: 0,
-            duration: 0.5, 
-        })
-        tl1.from(heading3.current, { 
-            opacity: 0,
-            duration: 0.5, 
-        })
+        // tl1.from(heading2.current, { 
+        //     opacity: 0,
+        //     duration: 0.5, 
+        // })
+        // tl1.from(heading3.current, { 
+        //     opacity: 0,
+        //     duration: 0.5, 
+        // })
     }, [])
 
     return (

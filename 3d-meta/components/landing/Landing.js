@@ -22,21 +22,21 @@ const Landing = () => {
         let tl1 = new gsap.timeline()
 
         tl1.from(heading1.current, {
-            opacity: 0,
+            y: -20,
             duration: 0.5,
             delay: 1.5,
             ease: 'power1.easeOut'
         })
-        tl1.from(heading2.current, { 
-            opacity: 0,
-            duration: 0.5,
-            ease: 'power1.easeOut'
-        })
-        tl1.from(heading3.current, { 
-            opacity: 0,
-            duration: 0.5,
-            ease: 'power1.easeOut'
-        })
+        // tl1.from(heading2.current, { 
+        //     opacity: 0,
+        //     duration: 0.5,
+        //     ease: 'power1.easeOut'
+        // })
+        // tl1.from(heading3.current, { 
+        //     opacity: 0,
+        //     duration: 0.5,
+        //     ease: 'power1.easeOut'
+        // })
     }, [])
 
     return (

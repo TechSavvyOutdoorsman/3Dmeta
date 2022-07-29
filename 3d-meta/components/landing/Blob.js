@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import { useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { useGLTF, PerspectiveCamera, Float, Preload } from '@react-three/drei'
+import { useGLTF, PerspectiveCamera, Float } from '@react-three/drei'
 import { Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import useMediaQuery from '../../hooks/useMediaQuery'
@@ -146,7 +146,6 @@ const BackgroundCanvas = ({ props }) => {
         <Box pos='absolute' top='0' right='0' w='100%' h='100%' {...props}>
             <Canvas>
                 <Suspense fallback={null}>
-                    <Preload />
                     <spotLight position={[-950, 900, 1500]} angle={1} penumbra={1} intensity={4} shadow-mapSize={[1024, 1024]} />
                     <PerspectiveCamera makeDefault fov={15}>
                         <FlexBox>

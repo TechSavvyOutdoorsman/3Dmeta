@@ -30,9 +30,7 @@ const NavIconContainer = styled.div`
     height: 40px;
 
 
-    @media(min-width: 885px){
-        display: none;
-    }
+
 `
 
 
@@ -46,9 +44,6 @@ const NavIconWrapper = styled.span`
     gap: 0.15rem;
     transform: scale(-1, 1);
 
-    @media(min-width: 885px){
-        display: none;
-    }
 `
 
 const NavIconLongBar = styled.span`
@@ -145,16 +140,13 @@ const Navbar = props => {
                     <CtaButton>Start a Project</CtaButton>
                 </Stack>
 
-                <Box flex={1} align='right'>
+                <Box flex={1} align='right' pt={1}>
                     
-
                     <Box display={{ base: 'contents', md: 'none' }}>
-                        <NavIconContainer ref={btnRef} onClick={onOpen} aria-label='Open Menu'>
+                        <NavIconContainer  ref={btnRef} onClick={onOpen} aria-label='Open Menu'>
                             <NavIconWrapper >
-                                    <NavIconLongBar />
-                                    <NavIconLongBar />
-                                    {/* <NavIconShortBar /> */}
-                                {/* <IconButton  ref={btnRef} onClick={onOpen} icon={<HamburgerIcon />} variant='ghost' aria-label='Open Menu' /> */}
+                                <NavIconLongBar />
+                                <NavIconLongBar />
                             </NavIconWrapper>
                         </NavIconContainer>
 

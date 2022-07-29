@@ -92,7 +92,7 @@ const Navbar = props => {
 
     return (
         <Box
-            paddingY={{ base: '1rem', md: '.5rem' }}
+            paddingY={{ base: '1.5rem', md: '.75rem' }}
             position='fixed'
             as='nav'
             w='100%'
@@ -148,7 +148,7 @@ const Navbar = props => {
                 <Box flex={1} align='right'>
                     
 
-                    <Box ml={2} pt={1.75} display={{ base: 'inline-block', md: 'none' }}>
+                    <Box display={{ base: 'contents', md: 'none' }}>
                         <NavIconContainer ref={btnRef} onClick={onOpen} aria-label='Open Menu'>
                             <NavIconWrapper >
                                     <NavIconLongBar />

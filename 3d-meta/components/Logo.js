@@ -5,27 +5,26 @@ import styled from '@emotion/styled'
 
 
 const LogoBox = styled.span`
-    display: flex;
-    align: center;
-    width: 54px;
-    height: 45px;
-    transform: scale(1);
+    display: block;
+    width: 130px;
     margin-left: .5rem;
+
 
 @media (min-width: 768px) { 
     padding-top: 3px;
+    width: 210px;
 } 
 `
 
 const Logo = () => {
 
-    const navImg = '/images/orb-1.png'
+    const navImg = '/images/side.svg'
 
     return (
         <Link href='/'>
             <a>
                 <LogoBox>
-                    <Image src={navImg} layout='fill' alt='logo' loading='eager' priority />
+                    <Image src={navImg} layout='responsive' width={212} height={60} alt='logo' loading='eager' priority />
                 </LogoBox>
             </a>
         </Link>

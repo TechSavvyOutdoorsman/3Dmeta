@@ -1,10 +1,11 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Spinner } from '@chakra-ui/react'
 import { useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { useGLTF, PerspectiveCamera, Float } from '@react-three/drei'
+import { useGLTF, PerspectiveCamera, Float,  Html } from '@react-three/drei'
 import { Box as FlexBox, } from '@react-three/flex'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import useMediaQuery from '../../hooks/useMediaQuery'
+
 
 
 const MetaSphere =  ({ props, position }) => {
@@ -137,6 +138,21 @@ const BlackOrb = ({ props, position }) => {
         </group>
     )
 }
+
+const Loading = () => {
+    return (
+        <Html as='div' m='auto' pos='relative'>
+            <Spinner
+                size='xl'
+                pos='absolute'
+                left='50%'
+                top='50%'
+                ml='calc(0px - var(--spinner-size) / 2)'
+                mt='calc(0px - var(--spinner-size))'
+            />
+        </Html>
+    )
+}
         
 const BackgroundCanvas = ({ props }) => {
             
@@ -145,7 +161,7 @@ const BackgroundCanvas = ({ props }) => {
     return (
         <Box pos='absolute' top='0' right='0' w='100%' h='100%' {...props}>
             <Canvas>
-                <Suspense fallback={null}>
+                <Suspense fallback={<Loading />}>
                     <spotLight position={[-950, 900, 1500]} angle={1} penumbra={1} intensity={4} shadow-mapSize={[1024, 1024]} />
                     <PerspectiveCamera makeDefault fov={15}>
                         <FlexBox>

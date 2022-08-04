@@ -12,8 +12,6 @@ import { gsap } from 'gsap'
 const LandingAlt = () => {
 
     const heading1 = useRef()
-    const heading2 = useRef()
-    const heading3 = useRef()
 
     useEffect(() => {
         let tl1 = new gsap.timeline()
@@ -24,14 +22,6 @@ const LandingAlt = () => {
             delay: 1,
             ease: 'power4.easeOut'
         })
-        // tl1.from(heading2.current, { 
-        //     opacity: 0,
-        //     duration: 0.5, 
-        // })
-        // tl1.from(heading3.current, { 
-        //     opacity: 0,
-        //     duration: 0.5, 
-        // })
     }, [])
 
     return (
@@ -70,7 +60,6 @@ const LandingAlt = () => {
                 </Box>
                 <Box align='left' maxW={{ base: '300px', md: 'container.sm'}} >
                     <Heading
-                        ref={heading2}
                         lineHeight={{ base: '20px', md: '24px' }}
                         as='h3'
                         color='mBlack.800'
@@ -81,7 +70,6 @@ const LandingAlt = () => {
                     </Heading>
                 </Box>
                 <Box
-                    ref={heading3}
                     pl={{ md: '1rem', xl: '4rem'}}
                 >
                     <CtaButton

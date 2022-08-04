@@ -1,9 +1,10 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import NextLink from 'next/link'
 import Logo from './Logo'
 import DrawerList from './DrawerList'
 import CtaButton from './CtaButton'
 import styled from '@emotion/styled'
+import { gsap} from 'gsap'
 import {
     Container,
     Box,
@@ -23,13 +24,11 @@ import {
 
 const NavIconContainer = styled.div`
     background: #FFFFFF;
-    margin-right: 0.75rem;
+    margin-right: 1rem;
     border-radius: 100%;
     padding: .75rem;
     width: 40px;
     height: 40px;
-
-
 
 `
 
@@ -84,6 +83,19 @@ const Navbar = props => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef()
 
+    const linkBarRef = useRef()
+
+    useEffect(() => {
+        let tl1 = new gsap.timeline()
+
+        tl1.from(linkBarRef.current, {
+            y: -100,
+            duration: 0.25,
+            delay: 1,
+            ease: 'bounce.easeOut'
+        })
+    }, [])
+
 
     return (
         <Box
@@ -122,6 +134,7 @@ const Navbar = props => {
                 </Flex>
 
                 <Stack
+                    ref={linkBarRef}
                     direction={{ base: 'column', md: 'row'}}
                     display={{base: 'none', md: 'flex'}}
                     justify='flex-end'
@@ -163,6 +176,7 @@ const Navbar = props => {
                             >
 
                                 <DrawerHeader>
+                                    
                                     <DrawerCloseButton color='mBlack.900' sx={{
                                         _focus: {
                                             ring: 1,
@@ -181,10 +195,9 @@ const Navbar = props => {
                                     color={useColorModeValue('mono.900', 'mono.100')}
                                 >
 
-                                <DrawerList onClose={onClose}  />
+                                    <DrawerList onClose={onClose}  />
 
                                 </DrawerBody>
-
 
                             </DrawerContent>
 

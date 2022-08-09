@@ -10,7 +10,7 @@ import useMediaQuery from '../../hooks/useMediaQuery'
 
 const MetaSphere =  ({ props, position }) => {
     const group = useRef()
-    const { nodes, materials } = useGLTF("/threeD/metaSphereMed.glb")
+    const { nodes, materials } = useGLTF("/threeD/metaSphere5.glb")
 
     return (
         <group scale={0.5} position={position} ref={group} {...props} dispose={null}>
@@ -163,7 +163,7 @@ const BackgroundCanvas = ({ props }) => {
         <Box pos='absolute' top='0' right='0' w='100%' h='100%' {...props}>
             <Canvas>
                 <Suspense fallback={<Loading />}>
-                    <spotLight color='#D0D0D0' position={[-950, 900, 1500]} angle={1} penumbra={1} intensity={1} shadow-mapSize={[1024, 1024]} />
+                    <spotLight color='#999999' position={[-950, 900, 1500]} angle={1} penumbra={1} intensity={15} shadow-mapSize={[1024, 1024]} />
                     <PerspectiveCamera makeDefault fov={15}>
                         <FlexBox>
                             <MetaSphere position={isDesktop ? [120, 0, -1400] : [0, 0, -1400]} />

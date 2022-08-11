@@ -25,7 +25,7 @@ const LandingThree = () => {
                     pos='relative'
                     margin='0 auto'
                     justify='center'
-                    align='center'
+                    align='left'
                     bg='mBlack.800'
                     maxW='container.xl'
                 >

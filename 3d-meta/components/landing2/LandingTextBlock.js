@@ -5,7 +5,7 @@ import {
 
 const LandingTextBlock = ({ children }) => {
     return (
-        <Flex textAlign='left' maxW='container.md'>
+        <Flex textAlign='left' align='left'>
             <Text as='p' color='mBlack.900' fontSize={{ base: 'large', md: 'x-large'}} fontWeight='regular' lineHeight='7' >{children}</Text>
         </Flex>
     )

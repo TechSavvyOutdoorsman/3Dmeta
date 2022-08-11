@@ -38,7 +38,7 @@ const LandingAlt = () => {
                 flex={1}
                 gap={{ base: '1rem', md: '2rem', xl: '4rem' }}
                 mb={{ base: '1rem', lg: '3rem'}}
-                // px={{ base: '1rem', lg: '2rem', xl: '6rem' }}
+                px={{ base: '1rem', md: '0' }}
                 pb={{ base: '1rem', lg: '2rem', xl: '3rem'}}
                 maxW='container.lg'
                 flexDir='column'

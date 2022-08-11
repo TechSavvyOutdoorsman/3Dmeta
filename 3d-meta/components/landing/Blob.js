@@ -166,13 +166,13 @@ const BackgroundCanvas = ({ props }) => {
                     <spotLight color='#999999' position={[-950, 900, 1500]} angle={120} penumbra={1} intensity={1} />
                     <PerspectiveCamera makeDefault fov={15}>
                         <FlexBox>
-                            <MetaSphere position={isDesktop ? [120, 0, -1400] : [0, 0, -1400]} />
-                            <BlackOrb position={isDesktop ? [30, 0, -700] : [-30, 0, -700]} />
-                            <GrayOrb position={isDesktop ? [70, 100, -1300] : [-50, 100, -1300]} />
+                            <MetaSphere position={isDesktop ? [120, -20, -1400] : [0, 0, -1400]} />
+                            <BlackOrb position={isDesktop ? [30, -20, -700] : [-30, 0, -700]} />
+                            <GrayOrb position={isDesktop ? [70, 80, -1300] : [-50, 100, -1300]} />
                             {/* <GrayOrb position={isDesktop ? [240, 80, -1900] : [90, 80, -1905]} /> */}
-                            <WhiteOrb position={isDesktop ? [155, 100, -1305] : [40, 100, -1305]} />
+                            <WhiteOrb position={isDesktop ? [155, 80, -1305] : [40, 100, -1305]} />
                             {/* <WhiteOrb position={isDesktop ? [80, 110, -1905] : [-40, 110, -1905]} /> */}
-                            <LightWhiteOrb position={isDesktop ? [160, -20, -1205] : [50, -20, -1205]} />  
+                            <LightWhiteOrb position={isDesktop ? [160, -40, -1205] : [50, -20, -1205]} />  
                         </FlexBox>
                     </PerspectiveCamera>
                 </Suspense> 

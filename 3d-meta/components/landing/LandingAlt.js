@@ -26,7 +26,7 @@ const LandingAlt = () => {
 
     return (
         <Flex
-            h={{ base: '85vh', md: '100vh' }}
+            h={{ base: '90vh', md: '100vh' }}
             flexDir='column'
             bg='bg.500'
             pos='relative'
@@ -40,7 +40,7 @@ const LandingAlt = () => {
                 mb={{ base: '1rem', lg: '3rem'}}
                 px={{ base: '1rem', md: '0' }}
                 pb={{ base: '1rem', lg: '2rem', xl: '3rem'}}
-                maxW='container.lg'
+                maxW='container.xl'
                 flexDir='column'
                 textAlign='left'
                 align='left'
@@ -48,11 +48,10 @@ const LandingAlt = () => {
                 zIndex={1}
                 
             >
-                <Box>
+               <Box >
                     <Heading
                         as='h1'
                         ref={heading1}
-                        // maxW={{ base: '300px', lg: '750px'}}
                         lineHeight={{ base: '45px', md: '65px', xl: '85px' }}
                         fontSize={{ base: '45px', md: '64px', xl: '90px' }}
                         color='mBlack.900'
@@ -61,7 +60,7 @@ const LandingAlt = () => {
                         Websites & Applications
                     </Heading>
                 </Box>
-                <Box align='left' maxW={{ base: '300px', md: 'container.sm'}} >
+                <Box align='left' maxW={{ base: '300px', md: '500px'}} >
                     <Heading
                         lineHeight={{ base: '20px', md: '24px' }}
                         as='h3'

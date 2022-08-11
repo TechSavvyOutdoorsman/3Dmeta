@@ -20,7 +20,7 @@ const LandingTwo = () => {
             flexDir='column'
             align='center'
             py={{ base: '4rem', md: '8rem' }}
-            // px={{ base: '1rem', lg: '2rem', xl: '6rem' }}
+            px={{ base: '1rem', md: '0' }}
             bg='bg.500'
             gap={{ base: '10rem', md: '18rem'}}
         >

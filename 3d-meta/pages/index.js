@@ -16,7 +16,7 @@ export default function Home() {
     >
       <LandingAlt />
       <LandingTwo />
-      <LandingThree />
+      {/* <LandingThree /> */}
     </Flex>
   )
 }

@@ -6,7 +6,7 @@ import {
 const LandingTextBlock = ({ children }) => {
     return (
         <Flex textAlign='left' align='left'>
-            <Text as='p' color='mBlack.900' fontSize={{ base: 'large', md: 'x-large'}} fontWeight='regular' lineHeight='7' >{children}</Text>
+            <Text as='p' color='mBlack.900' fontSize={{ base: 'large', md: 'x-large'}} fontWeight='regular' lineHeight='6' >{children}</Text>
         </Flex>
     )
 }

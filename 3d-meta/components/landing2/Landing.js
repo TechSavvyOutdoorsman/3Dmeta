@@ -1,18 +1,19 @@
 import { 
-    Flex
+    Flex,
+    Box
 } from '@chakra-ui/react'
 import TextBlock from './TextBlock'
 import LandingTextBlock from './LandingTextBlock'
 import Title from './ProductsTitle'
 import Container from './Container'
-import ImageContainer from './ImageContainer'
-import MobileImageContainer from './MobileImageContainer'
+import Scene from './Scene'
+import { useGLTF, PerspectiveCamera, Bounds, Stage, Environment } from '@react-three/drei'
+import { Box as FlexBox } from '@react-three/flex'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import Website from './models/Website'
+import RedShapes from './models/RedShapes'
+import useMediaQuery from '../../hooks/useMediaQuery'
 
-
-// grab images 
-const meta = '/images/meta-screenshot.jpg'
-const webApp = '/images/webApp-screenshot.png'
-const mobileApp = '/images/mobileApp-screenshot.png'
 
 const LandingTwo = () => {
     return (
@@ -34,22 +35,40 @@ const LandingTwo = () => {
                 <Title>Our Products</Title>
             </Flex>
 
+            <Flex
+                maxW='container.lg'
+                flexDir='column'
+                w='100%'
+                h='100%'
+            >
+
             <Container>
-                <ImageContainer src={meta} alt='Screenshot of Website made by METATECH Digital' />
+                    <Scene>
+                        <Environment preset='studio' />
+                        <PerspectiveCamera makeDefault fov={45} near={1} far={5500} >
+                            {/* <Stage contactShadow shadows adjustCamera intensity={1} environment='studio' preset='soft' makeDefault > */}
+
+                            <FlexBox>
+                                <RedShapes position={[0, -400, -3800]} />
+                                <Website rotation={[0, -Math.PI / 2, 0]}  position={[0, -400, -2500 ]} />
+                            </FlexBox>
+                            {/* </Stage> */}
+                        </PerspectiveCamera>
+
+                    </Scene>
                 <TextBlock heading='Websites' body='All our websites are incredibly fast, visually stunning, and memorable.' />
             </Container>
 
             <Container>
-                <ImageContainer src={webApp} alt='Screenshot of Web Application made by METATECH Digital' />
+                <Scene>
+
+                </Scene>
                 <TextBlock heading='Web Applications' body='Our applications are not only aesthetically pleasing, but purpose-built tools to help you make more money.' />
             </Container>
-            
-            <Container>
-                <MobileImageContainer src={mobileApp} alt='Screenshot of Mobile Application made by METATECH Digital' />
-                <TextBlock heading='Mobile Applications' body='Mobile applications with design your users will love using.' />
-            </Container>
+            </Flex>
         </Flex>
     )
 }
+
 
 export default LandingTwo

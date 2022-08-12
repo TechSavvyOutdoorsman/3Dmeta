@@ -1,17 +1,12 @@
 import {
-    Flex
+    Box
 } from '@chakra-ui/react'
 
 const Container = ({ children }) => {
     return (
-        <Flex
-            flexDir={{ base: 'column', md: 'row-reverse' }}
-            gap='3rem'
-            justify='space-between'
-            align='center'
-        >
+        <Box w='100%' h={{ base: '400px', md: '600px'}}>
             {children}
-        </Flex>
+        </Box>
     )
 }
 

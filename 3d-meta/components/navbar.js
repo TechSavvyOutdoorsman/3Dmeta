@@ -16,10 +16,8 @@ import {
     DrawerOverlay,
     DrawerContent,
     DrawerBody,
-    DrawerCloseButton,
     DrawerHeader,
     useDisclosure,
-    useColorModeValue,
 } from '@chakra-ui/react'
 
 const NavIconContainer = styled.div`
@@ -210,12 +208,7 @@ const Navbar = props => {
                                         <CloseNavIconRightBar />    
                                     </CloseNavIconWrapper>
                                 </NavIconContainer>
-                                    {/* <DrawerCloseButton color='mBlack.900' sx={{
-                                        _focus: {
-                                            ring: 1,
-                                            ringColor: 'home.200'
-                                        }
-                                    }}/> */}
+              
                                     
                                 </DrawerHeader>
 

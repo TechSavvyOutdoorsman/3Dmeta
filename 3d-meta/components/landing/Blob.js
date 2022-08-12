@@ -164,7 +164,7 @@ const BackgroundCanvas = ({ props }) => {
             <Canvas>
                 <Suspense fallback={<Loading />}>
                     {/* <spotLight color='#999999' position={[-950, 900, 1500]} angle={120} penumbra={1} intensity={1} /> */}
-                    <Environment files='/threeD/Envs/golf.hdr'  />
+                    <Environment files='/threeD/envs/golf.hdr'  />
                     <PerspectiveCamera makeDefault fov={15}>
                         <FlexBox>
                             <MetaSphere position={isDesktop ? [120, -20, -1400] : [0, 0, -1400]} />

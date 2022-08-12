@@ -1,14 +1,10 @@
 
 import {
-    Box,
     Spinner
 } from '@chakra-ui/react'
-import { useRef, Suspense } from 'react'
+import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { useGLTF, PerspectiveCamera, Html, Environment } from '@react-three/drei'
-import { Box as FlexBox } from '@react-three/flex'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import useMediaQuery from '../../hooks/useMediaQuery'
+import { Html } from '@react-three/drei'
 
 const Loading = () => {
     return (

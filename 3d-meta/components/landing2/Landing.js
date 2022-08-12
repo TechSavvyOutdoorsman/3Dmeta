@@ -1,18 +1,15 @@
 import { 
     Flex,
-    Box
 } from '@chakra-ui/react'
 import TextBlock from './TextBlock'
 import LandingTextBlock from './LandingTextBlock'
 import Title from './ProductsTitle'
 import Container from './Container'
 import Scene from './Scene'
-import { useGLTF, PerspectiveCamera, Bounds, Stage, Environment } from '@react-three/drei'
+import { PerspectiveCamera, Environment } from '@react-three/drei'
 import { Box as FlexBox } from '@react-three/flex'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import Website from './models/Website'
 import RedShapes from './models/RedShapes'
-import useMediaQuery from '../../hooks/useMediaQuery'
 
 
 const LandingTwo = () => {

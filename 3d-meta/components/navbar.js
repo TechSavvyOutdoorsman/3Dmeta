@@ -45,11 +45,39 @@ const NavIconWrapper = styled.span`
 
 `
 
+const CloseNavIconWrapper = styled.span`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 1rem;
+    height: 1rem;
+    transform: scale(-1, 1);
+
+`
+
+
 const NavIconLongBar = styled.span`
     min-width: 100%;
     height: 1px;
     background: #262626;
     border-radius: 3px;
+`
+
+const CloseNavIconLeftBar = styled.span`
+    min-width: 100%;
+    height: 1px;
+    background: #262626;
+    border-radius: 3px;
+    transform: rotate(-45deg);
+`
+
+const CloseNavIconRightBar = styled.span`
+    min-width: 100%;
+    height: 1px;
+    background: #262626;
+    border-radius: 3px;
+    transform: rotate(45deg);
 `
 
 
@@ -166,33 +194,37 @@ const Navbar = props => {
                         <Drawer
                             isOpen={isOpen}
                             onClose={onClose}
-                            placement='right'
-                        
+                            placement='bottom'
+                            size='full'
                         >
                             <DrawerOverlay />
                             <DrawerContent
-                                background='nav.500'
+                                background='meta.600'
                                 blur={0.8}
                             >
 
-                                <DrawerHeader>
-                                    
-                                    <DrawerCloseButton color='mBlack.900' sx={{
+                                <DrawerHeader pos='absolute' right='-5' top='5' >
+                                <NavIconContainer  ref={btnRef} onClick={onClose} aria-label='Open Menu'>
+                                    <CloseNavIconWrapper >
+                                        <CloseNavIconLeftBar />
+                                        <CloseNavIconRightBar />    
+                                    </CloseNavIconWrapper>
+                                </NavIconContainer>
+                                    {/* <DrawerCloseButton color='mBlack.900' sx={{
                                         _focus: {
                                             ring: 1,
                                             ringColor: 'home.200'
                                         }
-                                    }}/>
+                                    }}/> */}
                                     
                                 </DrawerHeader>
 
                                 <DrawerBody
                                     mt={5}
-                                    align='right'
+                                    align='left'
                                     fontSize={21}
                                     pr={5}
-                                    onClose={onClose}
-                                    color={useColorModeValue('mono.900', 'mono.100')}
+                                    py={5}
                                 >
 
                                     <DrawerList onClose={onClose}  />

@@ -44,7 +44,8 @@ const DrawerList = ({ onClose }) => {
             zIndex='999'
             fontFamily='heading'
             fontWeight='bold'
-            color='mBlack.900'
+            color='mWhite.100'
+            mt={12}
         >
             <DrawerListItem
                 href='/'

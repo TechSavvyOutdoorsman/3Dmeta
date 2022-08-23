@@ -6,7 +6,7 @@ import LandingTextBlock from './LandingTextBlock'
 import Title from './ProductsTitle'
 import Container from './Container'
 import Scene from './Scene'
-import { PerspectiveCamera, Environment } from '@react-three/drei'
+import { PerspectiveCamera, PresentationControls, Stage } from '@react-three/drei'
 import { Box as FlexBox } from '@react-three/flex'
 import Website from './models/Website'
 import RedShapes from './models/RedShapes'
@@ -41,17 +41,20 @@ const LandingTwo = () => {
 
             <Container>
                     <Scene>
-                        <Environment preset='studio' />
-                        <PerspectiveCamera makeDefault fov={45} near={1} far={5500} >
-                            {/* <Stage contactShadow shadows adjustCamera intensity={1} environment='studio' preset='soft' makeDefault > */}
+                            <PerspectiveCamera makeDefault fov={45} near={1} far={6500} >
+                            <spotLight color='#999999' position={[0, 0, 50]} angle={90} penumbra={1} intensity={3} />
+                            <PresentationControls
+                                global
+                                config={{ mass: 10, tension: 50 }}
+                                snap={{ mass: 10, tension: 50 }}
+                                polar={[-Math.PI / 36, Math.PI / 36]}
+                                azimuth={[-Math.PI / 30, Math.PI / 30]}
+                            >
 
-                            <FlexBox>
-                                <RedShapes position={[0, -400, -3800]} />
-                                <Website rotation={[0, -Math.PI / 2, 0]}  position={[0, -400, -2500 ]} />
-                            </FlexBox>
-                            {/* </Stage> */}
-                        </PerspectiveCamera>
-
+                                    <RedShapes position={[0, -800, -4200]} />
+                                    <Website rotation={[0, -Math.PI / 2, 0]}  position={[-50, -350, -2500 ]} />
+                            </PresentationControls>
+                            </PerspectiveCamera>
                     </Scene>
                 <TextBlock heading='Websites' body='All our websites are incredibly fast, visually stunning, and memorable.' />
             </Container>

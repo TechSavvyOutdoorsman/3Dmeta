@@ -8,7 +8,7 @@ const RedShapes = ({ props, position, rotation }) => {
         <group
           position={[-0.1, -0.1, 0.1]}
           rotation={[-Math.PI / 2, 0, 0]}
-          scale={1}
+          scale={1.1}
         >
           <mesh
             geometry={nodes.Torus.geometry}

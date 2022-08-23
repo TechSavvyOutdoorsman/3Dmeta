@@ -8,7 +8,7 @@ const Website = ({ props, position, rotation }) => {
         <group
           position={[1.8, 0.3, 0.2]}
           rotation={[-Math.PI / 2, 0, 0]}
-          scale={1}
+          scale={0.65}
         >
           <group position={[0, 258.5, 446.4]}>
             <mesh
